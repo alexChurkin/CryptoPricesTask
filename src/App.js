@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button } from 'react-bootstrap';
+import Navibar from './Components/Navibar';
 
 function App() {
   return (
     <div className="App">
+      <Navibar/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
