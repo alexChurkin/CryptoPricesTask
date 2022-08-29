@@ -8,13 +8,12 @@ import styles from './Footer.module.css';
 /* TODO Refactor to React-style */
 const Footer = () => (
     <footer class="bg-light">
-        <div class="container px-3">
-            <div class="row footer py-3">
-                <div class={`col-7 text-muted ${styles.textFooter} text-left`}>
+        <Container className="px-3">
+            <Row className="footer py-3">
+                <Col xs={7} className={`${styles.textFooter} text-muted text-left`}>
                     © Alex Churkin 2022
-                </div>
-
-                <div class={`col-5 text-right ${styles.socialLinks}`}>
+                </Col>
+                <Col xs={5} className={`text-right ${styles.socialLinks}`}>
                     <a class="svg" target="_blank" href="https://github.com/alexChurkin" title="Github">
                         <svg class={styles.svgFooter} aria-hidden="true" data-prefix="fab" data-icon="github"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
@@ -31,9 +30,9 @@ const Footer = () => (
                             </path>
                         </svg>
                     </a>
-                </div>
-            </div>
-        </div>
+                </Col>
+            </Row>
+        </Container>
     </footer>
 )
 

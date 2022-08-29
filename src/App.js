@@ -6,7 +6,7 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container-fluid">
       <Navibar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
