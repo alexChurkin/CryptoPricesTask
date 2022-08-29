@@ -1,17 +1,18 @@
-.nav-header-text {
+.navHeaderText {
     font-size: calc(2rem + 0.9vw);
 }
 
-.nav-button {
+.navButton {
     min-width: 70px;
     max-width: 70px;
     --bs-btn-active-color: white;
+    box-shadow: none;
 }
 
-.nav-button:hover {
+.navButton:hover {
     color: white;
 }
 
-.nav-button-text {
+.navButtonText {
     font-size: 1.5rem;
 }

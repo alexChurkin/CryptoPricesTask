@@ -1,0 +1,37 @@
+.textFooter {
+
+    font-size: 1.2rem;
+}
+
+@media (max-width:329px) {
+    .textFooter {
+        font-size: .9rem;
+    }
+}
+
+.svgFooter {
+    display: inline-block;
+    font-size: inherit;
+    width: 1.5em;
+    height: 1.4em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    overflow: visible;
+    vertical-align: -.11em;
+}
+
+.fEmailIcon {
+    margin-left: 8px;
+}
+
+.socialLinks a {
+    color: #15d163;
+    text-decoration: none;
+    padding-left: 5px;
+    font-size: 1.25rem;
+}
+
+.socialLinks a:hover {
+    color: #15d163;
+    cursor: pointer;
+}

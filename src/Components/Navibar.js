@@ -6,12 +6,14 @@ import {
     ToggleButton, NavbarBrand
 } from 'react-bootstrap';
 
+import styles from './Navibar.module.css';
+
 const Navibar = () => (
     <Container className="pb-3">
         <Row>
             <Navbar>
                 <NavbarBrand className="mx-auto">
-                    <span className="nav-header-text">CryptoPrices</span>
+                    <span className={styles.navHeaderText}>CryptoPrices</span>
                 </NavbarBrand>
             </Navbar>
 
@@ -25,23 +27,28 @@ const Navibar = () => (
                     name="options"
                     defaultValue={1}>
 
-                    <ToggleButton id="tbg-b-1" variant="outline-primary" size="lg" className="nav-button shadow-none" value={1}>
+                    <ToggleButton id="tbg-b-1" variant="outline-primary" size="lg"
+                        className={`${styles.navButton} shadow-none`} value={1}>
                         <span className="nav-button-text">₽</span>
                     </ToggleButton>
 
-                    <ToggleButton id="tbg-b-2" variant="outline-primary" size="lg" className="nav-button shadow-none btn-dark" value={2}>
+                    <ToggleButton id="tbg-b-2" variant="outline-primary" size="lg"
+                        className={`${styles.navButton} shadow-none`} value={2}>
                         <span className="nav-button-text">$</span>
                     </ToggleButton>
 
-                    <ToggleButton id="tbg-b-3" variant="outline-primary" size="lg" className="nav-button shadow-none" value={3}>
+                    <ToggleButton id="tbg-b-3" variant="outline-primary" size="lg"
+                        className={`${styles.navButton} shadow-none`} value={3}>
                         <span className="nav-button-text">€</span>
                     </ToggleButton>
 
-                    <ToggleButton id="tbg-b-4" variant="outline-primary" size="lg" className="nav-button shadow-none" value={4}>
+                    <ToggleButton id="tbg-b-4" variant="outline-primary" size="lg"
+                        className={`${styles.navButton} shadow-none`} value={4}>
                         <span className="nav-button-text">£</span>
                     </ToggleButton>
 
-                    <ToggleButton id="tbg-b-5" variant="outline-primary" size="lg" className="nav-button shadow-none" value={5}>
+                    <ToggleButton id="tbg-b-5" variant="outline-primary" size="lg"
+                        className={`${styles.navButton} shadow-none`} value={5}>
                         <span className="nav-button-text">¥</span>
                     </ToggleButton>
                 </ToggleButtonGroup>
