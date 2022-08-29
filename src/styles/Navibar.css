@@ -1,7 +1,17 @@
+.nav-header-text {
+    font-size: calc(2rem + 0.9vw);
+}
+
 .nav-button {
     min-width: 70px;
     max-width: 70px;
+    --bs-btn-active-color: white;
 }
+
+.nav-button:hover {
+    color: white;
+}
+
 .nav-button-text {
     font-size: 1.5rem;
 }
