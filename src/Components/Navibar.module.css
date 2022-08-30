@@ -37,13 +37,6 @@
     }
 }
 
-@media (min-width: 992px) {
-    .navButton {
-        min-width: 6vw;
-        max-width: 6vw;
-    }
-}
-
 .navButton:hover {
     color: white;
 }
@@ -51,4 +44,15 @@
 .navButtonText {
     font-size: calc(1.2rem + 0.5vw);
     text-align: center;
+}
+
+@media (min-width: 992px) {
+    .navButton {
+        min-width: 5vw;
+        max-width: 5vw;
+    }
+    .navButtonText {
+        font-size: calc(1rem + 0.5vw);
+        text-align: center;
+    }
 }
