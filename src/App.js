@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Navibar from './Components/Navibar';
+import Header from './Components/Header';
+import Master from './Components/Master';
+import Detail from './Components/Detail';
 import Footer from './Components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Navibar />
-      <header className="App-header">
+      <Header />
+      <Master />
+      <Footer />
+
+      {/*<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -21,8 +26,8 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-      <Footer />
+      </header>*/}
+
     </div>
   );
 }

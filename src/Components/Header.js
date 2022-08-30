@@ -6,7 +6,7 @@ import {
     ToggleButton, NavbarBrand
 } from 'react-bootstrap';
 
-import styles from './Navibar.module.css';
+import styles from './Header.module.css';
 
 const Navibar = () => (
     <Container className="pb-3">
