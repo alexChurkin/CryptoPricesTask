@@ -1,12 +1,47 @@
 .navHeaderText {
-    font-size: calc(2rem + 0.9vw);
+    font-size: calc(1.5rem + 2vw);
 }
 
 .navButton {
-    min-width: 70px;
-    max-width: 70px;
+    min-width: 18vw;
+    max-width: 18vw;
     --bs-btn-active-color: white;
     box-shadow: none;
+}
+
+@media (min-width: 400px) {
+    .navButton {
+        min-width: 15vw;
+        max-width: 15vw;
+    }
+}
+
+@media (min-width: 500px) {
+    .navButton {
+        min-width: 10vw;
+        max-width: 10vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .navButton {
+        min-width: 8vw;
+        max-width: 8vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .navButton {
+        min-width: 8vw;
+        max-width: 8vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .navButton {
+        min-width: 6vw;
+        max-width: 6vw;
+    }
 }
 
 .navButton:hover {
@@ -14,5 +49,6 @@
 }
 
 .navButtonText {
-    font-size: 1.5rem;
+    font-size: calc(1.2rem + 0.5vw);
+    text-align: center;
 }

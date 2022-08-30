@@ -5,7 +5,6 @@ import {
 
 import styles from './Footer.module.css';
 
-/* TODO Refactor to React-style */
 const Footer = () => (
     <footer class="bg-light">
         <Container className="px-3">
