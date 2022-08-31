@@ -1,3 +1,20 @@
+.masterViewContainer {
+    min-height: 300px;
+    width: 95vw;
+}
+
+@media (min-width: 768px) {
+    .masterViewContainer {
+        width: 55vw;
+    }
+}
+
+@media (min-width: 3000px) {
+    .masterViewContainer {
+        width: 20vw;
+    }
+}
+
 .text {
     font-size: 1.1rem;
 }

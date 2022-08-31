@@ -7,12 +7,12 @@ import styles from './Footer.module.css';
 
 const Footer = () => (
     <div className={styles.footer}>
-        <Container className="px-3 py-3">
+        <Container className={`${styles.footerInside} py-3`}>
             <Row>
-                <Col xs={7} className={`${styles.textFooter} text-muted`}>
+                <Col xs={7} className={`${styles.textFooter} px-0 text-muted`}>
                     <div className={styles.inner}>© Alex Churkin 2022</div>
                 </Col>
-                <Col xs={5} className={` ${styles.socialButtons}`}>
+                <Col xs={5} className={` ${styles.socialButtons} px-0`}>
                     <a target="_blank" href="https://github.com/alexChurkin" title="Github">
                         <svg className={styles.svgFooter} aria-hidden="true" data-prefix="fab" data-icon="github"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">

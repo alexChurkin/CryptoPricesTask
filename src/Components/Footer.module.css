@@ -3,13 +3,31 @@
     display:block;
 }
 
+.footerInside {
+    width: 95vw;
+}
+
+@media (min-width: 768px) {
+    .footerInside {
+        width: 55vw;
+    }
+}
+
+@media (min-width: 3000px) {
+    .footerInside {
+        width: 20vw;
+    }
+}
+
 .textFooter {
     font-size: 1.1rem;
     padding-right: 0;
+    text-align: left;
 }
 
 .socialButtons {
     padding-left: 0;
+    text-align: right;
 }
 
 .socialButtons svg {
