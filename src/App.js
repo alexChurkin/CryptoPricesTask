@@ -1,15 +1,16 @@
 import './App.css';
+import { Container } from 'react-bootstrap';
 
 import Header from './Components/Header';
-import Master from './Components/Master';
-import Detail from './Components/Detail';
+import MasterView from './Components/MasterView';
+import DetailView from './Components/DetailView';
 import Footer from './Components/Footer';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Master />
+      <MasterView />
       <Footer />
     </div>
   );

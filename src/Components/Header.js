@@ -9,7 +9,7 @@ import {
 import styles from './Header.module.css';
 
 const Navibar = () => (
-    <Container className="pb-3">
+    <Container>
         <Row>
             <Navbar>
                 <NavbarBrand className="mx-auto">

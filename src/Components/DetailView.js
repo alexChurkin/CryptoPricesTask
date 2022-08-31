@@ -3,12 +3,12 @@ import {
     Row, Col,
 } from 'react-bootstrap';
 
-import styles from './Master.module.css';
+import styles from './DetailView.module.css';
 
-const Master = () => (
+const Detail = () => (
     <Container className="bg-light px-3 py-3">
-        Master view
+        Detail view
     </Container>
 )
 
-export default Master;
+export default Detail;
