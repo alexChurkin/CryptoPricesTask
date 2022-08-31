@@ -1,5 +1,25 @@
 .textFooter {
     font-size: 1.1rem;
+    padding-right: 0;
+}
+
+.socialButtons {
+    padding-left: 0;
+}
+
+.socialButtons svg {
+    color: #15d163;
+    width: 1.5rem;
+    height: 1.6rem;
+}
+
+.socialButtons svg:hover {
+    color: #14b055;
+    cursor: pointer;
+}
+
+.emailIcon {
+    margin-left: 10px;
 }
 
 @media (max-width: 475px) {
@@ -10,28 +30,4 @@
     .socialButtons {
         text-align: end;
     }
-}
-
-.socialButtons svg {
-    color: #15d163;
-    text-decoration: none;
-}
-
-.socialButtons svg:hover {
-    color: #14b055;
-    cursor: pointer;
-}
-
-.svgFooter {
-    font-size: inherit;
-    width: 1.5rem;
-    height: 1.5rem;
-    padding-left: 0.1rem;
-    padding-right: 0.1rem;
-    overflow: visible;
-    vertical-align: -.11rem;
-}
-
-.emailIcon {
-    margin-left: 10px;
 }
