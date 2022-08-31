@@ -1,36 +1,37 @@
 .textFooter {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
-@media (max-width:329px) {
+@media (max-width: 475px) {
     .textFooter {
-        font-size: .9rem;
+        text-align: start;
+        font-size: 1rem;
+    }
+    .socialButtons {
+        text-align: end;
     }
 }
 
-.socialLinks a {
+.socialButtons svg {
     color: #15d163;
     text-decoration: none;
-    padding-left: 6px;
-    font-size: 1.25rem;
 }
 
-.socialLinks a:hover {
+.socialButtons svg:hover {
     color: #14b055;
     cursor: pointer;
 }
 
 .svgFooter {
-    display: inline-block;
     font-size: inherit;
-    width: 1.5em;
-    height: 1.5em;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
     overflow: visible;
-    vertical-align: -.11em;
+    vertical-align: -.11rem;
 }
 
-.fEmailIcon {
-    margin-left: 8px;
+.emailIcon {
+    margin-left: 10px;
 }

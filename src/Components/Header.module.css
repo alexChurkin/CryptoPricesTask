@@ -1,10 +1,10 @@
 .navHeaderText {
-    font-size: calc(1.5rem + 2vw);
+    font-size: calc(1.45rem + 2vw);
 }
 
 .navButton {
-    min-width: 18vw;
-    max-width: 18vw;
+    min-width: 15vw;
+    max-width: 15vw;
     --bs-btn-active-color: white;
     box-shadow: none;
 }
@@ -16,7 +16,7 @@
     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 475px) {
     .navButton {
         min-width: 10vw;
         max-width: 10vw;
