@@ -4,18 +4,12 @@
 }
 
 .footerInside {
-    width: 95vw;
+    width: 60vw;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 992px) {
     .footerInside {
-        width: 55vw;
-    }
-}
-
-@media (min-width: 3000px) {
-    .footerInside {
-        width: 20vw;
+        width: 95vw;
     }
 }
 

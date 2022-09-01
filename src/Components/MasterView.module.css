@@ -1,17 +1,11 @@
 .masterViewContainer {
     min-height: 300px;
-    width: 95vw;
+    width: 60vw;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 992px) {
     .masterViewContainer {
-        width: 55vw;
-    }
-}
-
-@media (min-width: 3000px) {
-    .masterViewContainer {
-        width: 20vw;
+        width: 95vw;
     }
 }
 
