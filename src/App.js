@@ -1,10 +1,10 @@
 import './App.css';
 import { Container } from 'react-bootstrap';
 
-import Header from './Components/Header';
-import MasterView from './Components/MasterView';
-import DetailView from './Components/DetailView';
-import Footer from './Components/Footer';
+import Header from './components/Header';
+import MasterView from './components/MasterView';
+import DetailView from './components/DetailView';
+import Footer from './components/Footer';
 
 function App() {
   return (
