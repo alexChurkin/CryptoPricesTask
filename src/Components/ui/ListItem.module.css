@@ -1,0 +1,29 @@
+.listItem {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    max-width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.textRank {
+    line-height: 3.5rem;
+    text-align: start;
+    width: 2.5rem;
+}
+
+.text {
+    line-height: 3.5rem;
+    text-align: start;
+}
+
+.nameText {
+    text-align: start;
+    width: 10rem;
+    line-height: 3.5rem;
+}

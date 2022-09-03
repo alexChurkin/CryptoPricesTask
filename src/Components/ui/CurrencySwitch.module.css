@@ -1,7 +1,3 @@
-.navHeaderText {
-    font-size: calc(2.5rem + 0.5vw);
-}
-
 .navButton {
     --bs-btn-active-color: white;
     box-shadow: none;

@@ -1,4 +1,4 @@
-.formControl:focus {
+.customInput:focus {
     border-color: #15d163;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
