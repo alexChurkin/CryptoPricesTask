@@ -6,14 +6,12 @@ import MasterView from './components/MasterView';
 import DetailView from './components/DetailView';
 import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <MasterView />
-      <Footer />
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Header />
+    <MasterView />
+    <Footer />
+  </div>
+);
 
 export default App;

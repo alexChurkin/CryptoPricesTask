@@ -1,21 +1,19 @@
-.commonItem {
+.wholeItem {
     padding: 0.8rem;
-}
-
-.part1 {
-    display: flex;
-    flex-direction: row;
 }
 
 .icon {
     width: 2.5rem;
     height: 2.5rem;
-    margin-right: 1rem;
+    margin-right: 0.8rem;
+}
+
+.priceAndChange24 {
+    flex-grow: 1;
 }
 
 .part2 {
     text-align: left;
-    padding-left: 3.5rem;
 }
 
 .textGreen {
