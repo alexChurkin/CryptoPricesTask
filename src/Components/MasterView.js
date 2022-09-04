@@ -12,9 +12,9 @@ const MasterView = () => (
     <Container className={`${styles.text} ${styles.masterViewContainer} px-0 pb-3`}>
         <CustomInput placeholder="Поиск криптовалют..." />
         <div className="list-group">
-            <ListItem rank={1} name={"Bitcoin"} price={20000} iconUrl={"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"} />
-            <ListItem rank={2} name={"Bitcoin"} price={20000} iconUrl={"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"} />
-            <ListItem rank={3000} name={"Bitcoin"} price={20000} iconUrl={"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"} />
+            <ListItem rank={1} name={"Bitcoin"} price={20000} currency={'usd'} iconUrl={"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"} />
+            <ListItem rank={2} name={"Bitcoin"} price={20000} currency={'eur'} iconUrl={"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"} />
+            <ListItem rank={3000} name={"Bitcoin"} price={20000} currency={'rub'} iconUrl={"https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579"} />
         </div>
     </Container>
 )
