@@ -42,8 +42,9 @@ const MasterView = () => (
                 rank={1}
                 price={100}
                 currency={'rub'}
-
                 change24h={12.00}
+
+                volume24h={2544}
                 mktCap={354954394530943}
             />
         </div>
