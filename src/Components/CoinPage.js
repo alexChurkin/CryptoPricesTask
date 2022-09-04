@@ -3,12 +3,10 @@ import {
     Row, Col,
 } from 'react-bootstrap';
 
-import styles from './DetailView.module.css';
-
-const Detail = () => (
+const CoinPage = () => (
     <Container className="bg-light px-3 py-3">
-        Detail view
+        Coin page
     </Container>
 )
 
-export default Detail;
+export default CoinPage;

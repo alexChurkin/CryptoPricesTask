@@ -2,7 +2,6 @@ import ListItem from "./ui/ListItem";
 
 const List = ({items}) => (
     <div className="list-group">
-
         {
             items.map(
                 (item) =>

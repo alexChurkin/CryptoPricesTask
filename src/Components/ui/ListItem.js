@@ -1,5 +1,4 @@
 import styles from './ListItem.module.css';
-import { Row, Col } from 'react-bootstrap';
 
 function getSignForCurrency(currency) {
     switch (currency) {
@@ -37,7 +36,7 @@ const ListItem = ({ iconUrl, name, rank, price, currency, change24h, volume24h, 
             <span><span className={styles.textGreen}>➤</span> Рыночная&nbsp;кап.: <span className="text-nowrap">{currency !== 'rub' ? getSignForCurrency(currency) : ''} {mktCap} {currency === 'rub' ? getSignForCurrency(currency) + ' ' : ''}</span></span>
         </div>
 
-    </a >
+    </a>
 )
 
 export default ListItem;
