@@ -17,3 +17,11 @@
     text-align: left;
     padding-left: 3.5rem;
 }
+
+.textGreen {
+    color: #15d163;
+}
+
+.textRed {
+    color: #ff4949;
+}
