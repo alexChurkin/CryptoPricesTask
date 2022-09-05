@@ -9,7 +9,7 @@ const CurrencySwitch = (props) => (
     <ToggleButtonGroup
         type="radio"
         exclusive="true"
-        name="options"
+        name="currency-switch"
         defaultValue='rub'
         {...props}>
 

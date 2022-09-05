@@ -1,12 +1,3 @@
-.navButton {
-    --bs-btn-active-color: white;
-    box-shadow: none;
-}
-
-.navButton:hover {
-    color: white;
-}
-
 .navButtonText {
     font-size: calc(1.2rem + 0.25vw);
     text-align: center;

@@ -3,15 +3,15 @@ import Pagination from 'react-bootstrap/Pagination';
 import styles from './PageSwitch.module.css';
 
 const PageSwitch = () => (
-    <nav aria-label="Page navigation example">
-        <ul class="pagination d-flex justify-content-center my-3">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <Pagination className="justify-content-center my-3">
+        <Pagination.First />
+        <Pagination.Prev />
+        <Pagination.Item active>{1}</Pagination.Item>
+        <Pagination.Item>{2}</Pagination.Item>
+        <Pagination.Item>{3}</Pagination.Item>
+        <Pagination.Next />
+        <Pagination.Last />
+    </Pagination>
 );
 
 export default PageSwitch;

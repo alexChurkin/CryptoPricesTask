@@ -1,4 +1,3 @@
-import './App.css';
 import { Container } from 'react-bootstrap';
 
 import TopTitle from './components/ui/TopTitle';
