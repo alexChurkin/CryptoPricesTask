@@ -3,9 +3,10 @@ import { Container } from 'react-bootstrap';
 
 import TopTitle from './components/ui/TopTitle';
 import CurrencySwitch from './components/ui/CurrencySwitch';
-import List from './components/List'
-import Footer from './components/Footer';
 import CustomInput from './components/ui/CustomInput';
+import List from './components/List'
+import PageSwitch from './components/ui/PageSwitch';
+import Footer from './components/Footer';
 
 const array = [
   {
@@ -42,11 +43,12 @@ const array = [
 
 const App = () => (
   <div className="App">
-    <Container className="text mainContainer px-0 pb-3">
+    <Container className="text mainContainer px-0">
       <TopTitle text="CryptoPrices" />
       <CurrencySwitch />
       <CustomInput placeholder="Поиск криптовалют..." />
       <List items={array}></List>
+      <PageSwitch />
     </Container>
     <Footer />
   </div>

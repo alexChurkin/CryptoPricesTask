@@ -13,7 +13,7 @@ const Footer = () => (
                     <div className={styles.inner}>© Alex Churkin 2022</div>
                 </Col>
                 <Col xs={5} className={` ${styles.socialButtons} px-0`}>
-                    <a target="_blank" href="https://github.com/alexChurkin" title="Github">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/alexChurkin" title="Github">
                         <svg className={styles.svgFooter} aria-hidden="true" data-prefix="fab" data-icon="github"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
                             <path fill="currentColor"
