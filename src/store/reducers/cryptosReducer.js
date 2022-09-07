@@ -1,5 +1,6 @@
 const defaultState = {
     isLoading: false,
+    page: -1,
     cryptos: [],
     currency: "rub"
 }
