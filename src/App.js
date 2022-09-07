@@ -4,7 +4,6 @@ import TopTitle from './components/ui/TopTitle';
 import CurrencySwitch from './components/ui/CurrencySwitch';
 import CustomInput from './components/ui/CustomInput';
 import List from './components/List';
-import PageSwitch from './components/ui/PageSwitch';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,7 +29,6 @@ const App = () => {
         <CurrencySwitch onChange={(value) => { dispatch(cryptosChangeCurrencyAction(value)); }} />
         <CustomInput placeholder="Поиск криптовалют..." />
         <List isLoading={isLoading} items={cryptos} currency={currency}/>
-        <PageSwitch />
       </Container>
       <Footer />
     </div>

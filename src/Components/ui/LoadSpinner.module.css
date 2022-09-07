@@ -1,6 +1,14 @@
+.spinnerBlock {
+    display: flex;
+    height: 76vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .bigSpinner {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
     width: 150px;
     height: 150px;
 
