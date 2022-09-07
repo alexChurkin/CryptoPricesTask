@@ -1,21 +1,24 @@
 import ListItem from "./ui/ListItem";
 
-const List = ({items}) => (
+const List = ({ items, currency }) => (
     <div className="list-group">
         {
-            items.map(
-                (item) =>
-                    <ListItem
-                        iconUrl={item.iconUrl}
-                        name={item.name}
-                        rank={item.rank}
-                        price={item.price}
-                        currency={item.currency}
-                        change24h={item.change24h}
-                        volume24h={item.volume24h}
-                        mktCap={item.mktCap}
-                    />
-            )
+            items != null ?
+                items.map(
+                    (item) =>
+                        <ListItem
+                            key={item.id}
+                            iconUrl={item.image}
+                            name={item.name}
+                            rank={item.market_cap_rank}
+                            price={item.current_price}
+                            currency={currency}
+                            change24h={item.price_change_percentage_24h}
+                            volume24h={item.total_volume}
+                            mktCap={item.market_cap}
+                        />
+                ) :
+                <></>
         }
     </div>
 )
