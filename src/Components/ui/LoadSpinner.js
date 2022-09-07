@@ -1,9 +1,9 @@
+import styles from './LoadSpinner.module.css';
 
-
-const LoadSpinner = () => (
-    <div class="spinner-border text-primary" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
+const LoadSpinner = (props) => (
+    <div
+        className={`spinner-border text-success ${styles.bigSpinner}`}
+        role="status" {...props}/>
 );
 
 export default LoadSpinner;
