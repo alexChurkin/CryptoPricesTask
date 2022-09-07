@@ -52,7 +52,7 @@ const App = () => {
 
   const loadItems = () => {
     /*dispatch(cryptosLoadedAction(array));*/
-    dispatch(fetchCryptos('rub', 20, 1));
+    dispatch(fetchCryptos('usd', 20, 1));
   }
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const App = () => {
         <TopTitle text="CryptoPrices" />
         <CurrencySwitch />
         <CustomInput placeholder="Поиск криптовалют..." />
-        <List items={cryptos} currency={'eur'}></List>
+        <List items={cryptos} currency={'usd'}></List>
         <PageSwitch />
       </Container>
       <Footer />
