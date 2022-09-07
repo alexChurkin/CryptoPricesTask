@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCryptos } from './api/CoinGeckoApi';
-import LoadSpinner from './components/ui/LoadSpinner';
+import { cryptosChangeCurrencyAction } from './store/reducers/cryptosReducer';
 
 const App = () => {
 
@@ -17,21 +17,19 @@ const App = () => {
 
   const isLoading = useSelector(state => state.isLoading);
   const cryptos = useSelector(state => state.cryptos);
+  const currency = useSelector(state => state.currency);
 
   useEffect(() => {
-    dispatch(fetchCryptos('usd', 20, 1));
-  }, []);
+    dispatch(fetchCryptos(currency, 20, 1));
+  }, [currency]);
 
   return (
     <div className="App">
       <Container className="mainContainer">
         <TopTitle text="CryptoPrices" />
-        <CurrencySwitch />
+        <CurrencySwitch onChange={(value) => { dispatch(cryptosChangeCurrencyAction(value)); }} />
         <CustomInput placeholder="Поиск криптовалют..." />
-        {isLoading ?
-          <LoadSpinner /> :
-          <List items={cryptos} currency={'usd'}></List>
-        }
+        <List isLoading={isLoading} items={cryptos} currency={currency}/>
         <PageSwitch />
       </Container>
       <Footer />
