@@ -3,7 +3,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import styles from './PageSwitch.module.css';
 
 const PageSwitch = () => (
-    <Pagination className="justify-content-center my-3">
+    <Pagination className={`${styles.primaryColored} justify-content-center my-3`}>
         <Pagination.First />
         <Pagination.Prev />
         <Pagination.Item active>{1}</Pagination.Item>

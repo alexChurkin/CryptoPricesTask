@@ -32,8 +32,8 @@ const ListItem = ({ iconUrl, name, rank, price, currency, change24h, volume24h, 
         </div>
 
         <div className={styles.textLeft}>
-            <span><span className={styles.textGreen}>➤</span> Объём&nbsp;(24 ч.):&nbsp;&nbsp; <span className="text-nowrap">{currency !== 'rub' ? getSignForCurrency(currency) : ''} {volume24h} {currency === 'rub' ? getSignForCurrency(currency) + ' ' : ''}</span></span><br />
-            <span><span className={styles.textGreen}>➤</span> Рыночная&nbsp;кап.: <span className="text-nowrap">{currency !== 'rub' ? getSignForCurrency(currency) : ''} {mktCap} {currency === 'rub' ? getSignForCurrency(currency) + ' ' : ''}</span></span>
+            <span><span className={styles.textPrimary}>➤</span> Объём&nbsp;(24 ч.):&nbsp;&nbsp; <span className="text-nowrap">{currency !== 'rub' ? getSignForCurrency(currency) : ''} {volume24h} {currency === 'rub' ? getSignForCurrency(currency) + ' ' : ''}</span></span><br />
+            <span><span className={styles.textPrimary}>➤</span> Рыночная&nbsp;кап.: <span className="text-nowrap">{currency !== 'rub' ? getSignForCurrency(currency) : ''} {mktCap} {currency === 'rub' ? getSignForCurrency(currency) + ' ' : ''}</span></span>
         </div>
 
     </a>

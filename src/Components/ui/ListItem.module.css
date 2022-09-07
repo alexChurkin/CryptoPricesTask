@@ -16,10 +16,14 @@
     text-align: left;
 }
 
+.textPrimary {
+    color: var(--color-primary);
+}
+
 .textGreen {
-    color: #15d163;
+    color: var(--color-green);
 }
 
 .textRed {
-    color: #ff4949;
+    color: var(--color-red);
 }

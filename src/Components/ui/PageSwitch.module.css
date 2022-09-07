@@ -1,0 +1,7 @@
+.primaryColored {
+    --bs-link-color: var(--color-primary);
+    --bs-link-hover-color: var(--color-primary);
+    --bs-pagination-active-bg: var(--color-primary);
+    --bs-pagination-active-border-color: var(--bs-pagination-border-color);
+    --bs-pagination-focus-box-shadow: none;
+}

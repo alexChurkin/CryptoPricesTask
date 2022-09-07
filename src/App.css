@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  --color-primary: #15d163;
+  --color-primary-darker: #14b055;
+
+  --color-green: #15d163;
+  --color-red: #ff4949;
+}
+
+.mainContainer {
+  min-height: 500px;
+  width: 60vw;
+  font-size: 1.1rem;
+}
+
+@media (max-width:475px) {
+  .mainContainer {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .mainContainer {
+    width: 95vw;
+  }
+}

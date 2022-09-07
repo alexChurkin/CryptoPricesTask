@@ -25,13 +25,13 @@
 }
 
 .socialButtons svg {
-    color: #15d163;
+    color: var(--color-primary);
     width: 1.5rem;
     height: 1.6rem;
 }
 
 .socialButtons svg:hover {
-    color: #14b055;
+    color: var(--color-primary-darker);
     cursor: pointer;
 }
 

@@ -1,3 +1,16 @@
+.navButton {
+    --bs-primary: var(--color-primary);
+    --bs-btn-color: var(--color-primary);
+    --bs-btn-border-color: var(--color-primary);
+    --bs-btn-active-border-color: var(--color-primary);
+    --bs-btn-hover-border-color: var(--color-primary);
+    --bs-btn-disabled-color: var(--color-primary);
+    --bs-btn-disabled-border-color: var(--color-primary);
+    --bs-btn-active-bg: var(--color-primary);
+    --bs-btn-hover-bg: var(--color-primary);
+    box-shadow: none !important;
+}
+
 .navButtonText {
     font-size: calc(1.2rem + 0.25vw);
     text-align: center;

@@ -5,6 +5,6 @@ export const fetchCryptos = (currency, perPage, pageNumber) => {
     return function (dispatch) {
         axios.get(`https://api.coingecko.com/api/v3/coins/markets?per_page=${perPage}&page=${pageNumber}&vs_currency=${currency}`)
             .then(response=>response.data)
-            .then(json => dispatch(cryptosLoadedAction(json)));
+            .then(data => dispatch(cryptosLoadedAction(data)));
     }
 }
