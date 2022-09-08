@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { cryptosLoadStartAction, cryptosLoadedAction } from '../store/reducers/cryptosReducer';
+import {
+    cryptosLoadStartAction,
+    cryptosLoadedAction,
+    cryptosLoadFailedAction
+} from '../store/reducers/cryptosReducer';
 
 export const fetchCryptos = (currency, perPage, pageNumber) => {
 
@@ -25,6 +29,9 @@ export const fetchCryptos = (currency, perPage, pageNumber) => {
                 });
                 return data;
             })
-            .then(data => dispatch(cryptosLoadedAction(data)));
+            .then(data => dispatch(cryptosLoadedAction(data)))
+            .catch(error => {
+                dispatch(cryptosLoadFailedAction(error));
+            });
     }
 }

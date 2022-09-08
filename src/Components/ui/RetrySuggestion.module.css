@@ -1,0 +1,24 @@
+.sugBlock {
+    display: flex;
+    height: 76vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sugText {
+    font-size: 2rem;
+}
+
+.retryButton {
+    --bs-primary: var(--color-primary);
+    --bs-btn-color: var(--color-primary);
+    --bs-btn-border-color: var(--color-primary);
+    --bs-btn-active-border-color: var(--color-primary);
+    --bs-btn-hover-border-color: var(--color-primary);
+    --bs-btn-disabled-color: var(--color-primary);
+    --bs-btn-disabled-border-color: var(--color-primary);
+    --bs-btn-active-bg: var(--color-primary);
+    --bs-btn-hover-bg: var(--color-primary);
+    box-shadow: none !important;
+}
