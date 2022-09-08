@@ -4,7 +4,7 @@ import Pagination from 'react-bootstrap/Pagination';
 import styles from './PageSwitch.module.css';
 
 /* PageSwitch for minimum 3 pages */
-const PageSwitch = ({ count = 50, currentPage = 1, onPageSelected, ...props }) => {
+const PageSwitch = ({ count = 100, currentPage = 1, onPageSelected, ...props }) => {
 
     const [numbers, setNumbers] = useState([1, 2, 3]);
     const [enabled, setEnabled] = useState([false, false, true, true, true, true, true]);

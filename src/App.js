@@ -9,7 +9,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCryptos } from './api/CoinGeckoApi';
 import PageSwitch from "./components/ui/PageSwitch";
-import { cryptosChangeCurrencyAction } from './store/reducers/cryptosReducer';
+import {
+  cryptosChangeCurrencyAction,
+  cryptosChangePageAction
+}
+  from './store/reducers/cryptosReducer';
 
 const App = () => {
 
@@ -19,15 +23,16 @@ const App = () => {
   const isFailed = useSelector(state => state.isFailed);
   const cryptos = useSelector(state => state.cryptos);
   const currency = useSelector(state => state.currency);
+  const page = useSelector(state => state.page);
 
-  function loadPage(page = 1) {
+  function loadPage() {
     dispatch(fetchCryptos(currency, 20, page));
   }
 
   useEffect(() => {
     loadPage();
     window.scrollTo(0, 0);
-  }, [currency]);
+  }, [currency, page]);
 
   return (
     <div className="App">
@@ -41,7 +46,7 @@ const App = () => {
           onClickRetry={() => { loadPage(); }}
           items={cryptos}
           currency={currency} />
-        <PageSwitch onPageSelected={(page) => { loadPage(page); console.log("hey!!! " + page); }} />
+        <PageSwitch onPageSelected={(page) => { dispatch(cryptosChangePageAction(page)); }} />
       </Container>
       <Footer />
     </div>
