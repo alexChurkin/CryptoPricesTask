@@ -7,7 +7,6 @@ const CryptosBooklet = ({ isLoading, isFailed, onClickRetry, items, currency }) 
     if (isLoading)
         return <LoadSpinner />
     else if (isFailed) {
-        console.log("HEYYYYY");
         return <RetrySuggestion onClickRetry={onClickRetry} />
     }
     else if (items == null)
