@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCryptos } from './api/CoinGeckoApi';
+import PageSwitch from "./components/ui/PageSwitch";
 import { cryptosChangeCurrencyAction } from './store/reducers/cryptosReducer';
 
 const App = () => {
@@ -19,12 +20,13 @@ const App = () => {
   const cryptos = useSelector(state => state.cryptos);
   const currency = useSelector(state => state.currency);
 
-  function loadPage() {
-    dispatch(fetchCryptos(currency, 20, 1));
+  function loadPage(page = 1) {
+    dispatch(fetchCryptos(currency, 20, page));
   }
 
   useEffect(() => {
     loadPage();
+    window.scrollTo(0, 0);
   }, [currency]);
 
   return (
@@ -39,6 +41,7 @@ const App = () => {
           onClickRetry={() => { loadPage(); }}
           items={cryptos}
           currency={currency} />
+        <PageSwitch onPageSelected={(page) => { loadPage(page); console.log("hey!!! " + page); }} />
       </Container>
       <Footer />
     </div>

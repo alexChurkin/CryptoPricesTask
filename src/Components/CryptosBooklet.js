@@ -1,22 +1,22 @@
 import CryptosList from "./CryptosList";
 import LoadSpinner from "./ui/LoadSpinner";
-import PageSwitch from "./ui/PageSwitch";
 import RetrySuggestion from "./ui/RetrySuggestion";
 
 const CryptosBooklet = ({ isLoading, isFailed, onClickRetry, items, currency }) => {
     if (isLoading)
-        return <LoadSpinner />
+        return <LoadSpinner />;
     else if (isFailed) {
-        return <RetrySuggestion onClickRetry={onClickRetry} />
+        return <RetrySuggestion onClickRetry={onClickRetry} />;
     }
     else if (items == null)
         return <></>;
     else return (
         <>
-            <CryptosList items={items} currency={currency} />
-            <PageSwitch />
+            <CryptosList
+                items={items}
+                currency={currency} />
         </>
-    )
+    );
 }
 
 export default CryptosBooklet;

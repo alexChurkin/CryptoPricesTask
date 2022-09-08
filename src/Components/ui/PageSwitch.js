@@ -4,18 +4,19 @@ import Pagination from 'react-bootstrap/Pagination';
 import styles from './PageSwitch.module.css';
 
 /* PageSwitch for minimum 3 pages */
-const PageSwitch = ({ count = 10, currentPage = 1, onPageSelected, ...props }) => {
+const PageSwitch = ({ count = 50, currentPage = 1, onPageSelected, ...props }) => {
 
     const [numbers, setNumbers] = useState([1, 2, 3]);
     const [enabled, setEnabled] = useState([false, false, true, true, true, true, true]);
     const [active, setActive] = useState([true, false, false]);
 
     const onClickFirst = () => {
-        setNumbers([1, 2, 3]);
+        const newNumbers = [1, 2, 3];
+        setNumbers(newNumbers);
         setEnabled([false, false, true, true, true, true, true]);
         setActive([true, false, false]);
 
-        //onPageSelected(1);
+        onPageSelected(1);
     }
 
     const onClickPrev = () => {
@@ -30,32 +31,43 @@ const PageSwitch = ({ count = 10, currentPage = 1, onPageSelected, ...props }) =
         if (numbers[0] === 1) {
             setEnabled([false, false, true, true, true, true, true]);
             setActive([true, false, false]);
+
+            onPageSelected(numbers[0]);
         }
         //Moving left (down)
         else {
+            const newNumbers = [numbers[0] - 1, numbers[1] - 1, numbers[2] - 1];
+            setNumbers(newNumbers);
             setEnabled([true, true, true, true, true, true, true]);
-            setNumbers([numbers[0] - 1, numbers[1] - 1, numbers[2] - 1]);
             setActive([false, true, false]);
+
+            onPageSelected(newNumbers[1]);
         }
     }
 
     const onClick2 = () => {
         setEnabled([true, true, true, true, true, true, true]);
         setActive([false, true, false]);
-        //onPageSelected(numbers[1]);
+
+        onPageSelected(numbers[1]);
     }
 
     const onClick3 = () => {
         //End reached
         if (numbers[2] === count) {
-            setActive([false, false, true]);
             setEnabled([true, true, true, true, true, false, false]);
+            setActive([false, false, true]);
+
+            onPageSelected(numbers[2]);
         }
         //Moving right (up)
         else {
+            const newNumbers = [numbers[0] + 1, numbers[1] + 1, numbers[2] + 1];
+            setNumbers(newNumbers);
             setEnabled([true, true, true, true, true, true, true]);
-            setNumbers([numbers[0] + 1, numbers[1] + 1, numbers[2] + 1]);
             setActive([false, true, false]);
+
+            onPageSelected(newNumbers[1]);
         }
     }
 
@@ -67,10 +79,12 @@ const PageSwitch = ({ count = 10, currentPage = 1, onPageSelected, ...props }) =
     }
 
     const onClickLast = () => {
-        setNumbers([count - 2, count - 1, count]);
+        const newNumbers = [count - 2, count - 1, count];
+        setNumbers(newNumbers);
         setEnabled([true, true, true, true, true, false, false]);
         setActive([false, false, true]);
-        //onPageSelected(count);
+
+        onPageSelected(count);
     }
 
     return (

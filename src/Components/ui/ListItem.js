@@ -1,6 +1,6 @@
 import styles from './ListItem.module.css';
 
-const ListItem = ({ iconUrl, name, rank, price, currency, change24h, volume24h, mktCap }) => (
+const ListItem = ({ iconUrl, name, rank, price, change24h, volume24h, mktCap }) => (
     <a href="#" className={`${styles.wholeItem} list-group-item list-group-item-action align-items-start`} data-toggle="list">
 
         <div className='d-flex flex-row pb-2'>
@@ -9,7 +9,12 @@ const ListItem = ({ iconUrl, name, rank, price, currency, change24h, volume24h, 
                 <h5 className="text-start my-auto">{name} {(rank != null) ? `(#${rank})` : ""} </h5>
                 <div className="d-flex flex-row justify-content-between">
                     <span>{price}</span>
-                    <span className={(change24h > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}>{change24h.toFixed(2)}%</span>
+                    {
+                        (change24h !== null) ?
+                            <span className={(change24h > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}>{change24h.toFixed(2)}%</span> :
+                            <></>
+                    }
+
                 </div>
             </div>
         </div>
