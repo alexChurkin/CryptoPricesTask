@@ -1,11 +1,11 @@
-import CryptosList from "./CryptosList";
-import LoadSpinner from "./ui/LoadSpinner";
+import CryptosList from "./ui/composite/CryptosList";
+import LoadSpinner from "./ui/composite/LoadSpinner";
 import PageSwitch from "./ui/simple/PageSwitch";
-import MsgWithButton from "./ui/MsgWithButton";
+import MsgWithButton from "./ui/composite/MsgWithButton";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cryptosChangePageAction } from "../store/reducers/cryptosReducer";
-import { fetchCryptosAction } from '../api/CoinGeckoApi';
+import { loadCryptosAction } from '../asyncActions/CoinGeckoActions';
 
 const CryptosBook = () => {
 
@@ -17,7 +17,7 @@ const CryptosBook = () => {
     const page = useSelector(state => state.cryptos.page);
 
     function loadCryptos() {
-        dispatch(fetchCryptosAction(currency, 20, page));
+        dispatch(loadCryptosAction(currency, 20, page));
     }
 
     useEffect(() => {

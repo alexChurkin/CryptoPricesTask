@@ -5,21 +5,31 @@ import {
     cryptosLoadFailedAction
 } from '../store/reducers/cryptosReducer';
 
-export const fetchCryptosAction = (currency, perPage, pageNumber) => {
+import {
+    coinLoadStartAction,
+    coinLoadedAction,
+    coinLoadFailedAction
+} from '../store/reducers/coinReducer';
 
-    let formatter = new Intl.NumberFormat("ru", {
+function currencyFormatter(currency) {
+    return new Intl.NumberFormat("ru", {
         style: 'currency',
         currency: currency.toUpperCase(),
         minimumFractionDigits: 0,
         maximumFractionDigits: 20,
         currencyDisplay: 'symbol'
     });
+}
+
+export const loadCryptosAction = (currency, perPage, pageNumber) => {
+
+    let formatter = currencyFormatter(currency);
 
     return function (dispatch) {
         dispatch(cryptosLoadStartAction());
 
         axios.get(
-            `https://api.coingecko.com/api/v3/coins/markets?per_page=${perPage}&order=market_cap_desc&page=${pageNumber}&vs_currency=${currency}`)
+            `/coins/markets?per_page=${perPage}&order=market_cap_desc&page=${pageNumber}&vs_currency=${currency}`)
             .then(response => response.data)
             .then(data => {
                 data.forEach(element => {
@@ -32,6 +42,21 @@ export const fetchCryptosAction = (currency, perPage, pageNumber) => {
             .then(data => dispatch(cryptosLoadedAction(data)))
             .catch(error => {
                 dispatch(cryptosLoadFailedAction(error));
+            });
+    }
+}
+
+export const loadCoinDetailsAction = (id) => {
+
+    return function (dispatch) {
+        dispatch(coinLoadStartAction());
+
+        axios.get(
+            `/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`)
+            .then(response => response.data)
+            .then(data => dispatch(coinLoadedAction(data)))
+            .catch(error => {
+                dispatch(coinLoadFailedAction(error));
             });
     }
 }

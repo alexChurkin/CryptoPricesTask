@@ -1,4 +1,4 @@
-import ListItem from "./ui/simple/ListItem";
+import ListItem from "../simple/ListItem";
 
 const CryptosList = ({ items, currency }) => (
     <div className="list-group">
@@ -7,6 +7,7 @@ const CryptosList = ({ items, currency }) => (
                 (item) =>
                     <ListItem
                         key={item.id}
+                        id={item.id}
                         iconUrl={item.image}
                         name={item.name}
                         rank={item.market_cap_rank}
