@@ -1,3 +1,7 @@
+.h50px {
+    height: 50px;
+}
+
 .coinImage {
     width: calc(1.175rem + 1vw);
     height: calc(1.175rem + 1vw);

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import { useEffect, useState } from 'react';
 
 import styles from './PageSwitch.module.css';
 
@@ -13,7 +13,6 @@ const PageSwitch = (
         ...props
     }
 ) => {
-
     const [numbers, setNumbers] = useState([1, 2, 3]);
     const [enabled, setEnabled] = useState([false, false, true, true, true, true, true]);
     const [active, setActive] = useState([true, false, false]);
@@ -101,8 +100,26 @@ const PageSwitch = (
         onPageSelected(count);
     }
 
+    useEffect(() => {
+        if (currentPage > 1 && currentPage < count) {
+            setNumbers([currentPage - 1, currentPage, currentPage + 1]);
+            setEnabled([true, true, true, true, true, true, true]);
+            setActive([false, true, false]);
+        }
+        else if (currentPage === 1) {
+            setNumbers([1, 2, 3]);
+            setEnabled([false, false, true, true, true, true, true]);
+            setActive([true, false, false]);
+        }
+        else if (currentPage === count) {
+            setNumbers([count - 2, count - 1, count]);
+            setEnabled([true, true, true, true, true, false, false]);
+            setActive([false, false, true]);
+        }
+    }, [currentPage]);
+
     return (
-        <Pagination 
+        <Pagination
             className={`${styles.primaryColored} ${visible ? '' : 'd-none'} justify-content-center my-3`} {...props}>
             <Pagination.First onClick={onClickFirst} disabled={!enabled[0]} />
             <Pagination.Prev onClick={onClickPrev} disabled={!enabled[1]} />

@@ -46,7 +46,7 @@ const CoinsPage = () => {
             {component}
             <PageSwitch
                 count={100}
-                currentPage={1}
+                currentPage={page}
                 visible={!isLoading && !isFailed}
                 onPageSelected={(page) => { dispatch(cryptosChangePageAction(page)); }} />
         </>
