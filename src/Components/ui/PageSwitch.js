@@ -4,7 +4,15 @@ import Pagination from 'react-bootstrap/Pagination';
 import styles from './PageSwitch.module.css';
 
 /* PageSwitch for minimum 3 pages */
-const PageSwitch = ({ count = 100, currentPage = 1, onPageSelected, ...props }) => {
+const PageSwitch = (
+    {
+        count = 100,
+        currentPage = 1,
+        onPageSelected,
+        visible,
+        ...props
+    }
+) => {
 
     const [numbers, setNumbers] = useState([1, 2, 3]);
     const [enabled, setEnabled] = useState([false, false, true, true, true, true, true]);
@@ -27,6 +35,8 @@ const PageSwitch = ({ count = 100, currentPage = 1, onPageSelected, ...props }) 
     }
 
     const onClick1 = () => {
+        if (active[0]) return;
+
         //Start reached
         if (numbers[0] === 1) {
             setEnabled([false, false, true, true, true, true, true]);
@@ -46,6 +56,8 @@ const PageSwitch = ({ count = 100, currentPage = 1, onPageSelected, ...props }) 
     }
 
     const onClick2 = () => {
+        if (active[1]) return;
+
         setEnabled([true, true, true, true, true, true, true]);
         setActive([false, true, false]);
 
@@ -53,6 +65,8 @@ const PageSwitch = ({ count = 100, currentPage = 1, onPageSelected, ...props }) 
     }
 
     const onClick3 = () => {
+        if (active[3]) return;
+
         //End reached
         if (numbers[2] === count) {
             setEnabled([true, true, true, true, true, false, false]);
@@ -88,7 +102,8 @@ const PageSwitch = ({ count = 100, currentPage = 1, onPageSelected, ...props }) 
     }
 
     return (
-        <Pagination className={`${styles.primaryColored} justify-content-center my-3`} {...props}>
+        <Pagination 
+            className={`${styles.primaryColored} ${visible ? '' : 'd-none'} justify-content-center my-3`} {...props}>
             <Pagination.First onClick={onClickFirst} disabled={!enabled[0]} />
             <Pagination.Prev onClick={onClickPrev} disabled={!enabled[1]} />
             <Pagination.Item onClick={onClick1} active={active[0]} disabled={!enabled[2]}>{numbers[0]}</Pagination.Item>

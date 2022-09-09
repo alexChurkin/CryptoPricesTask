@@ -21,7 +21,7 @@ const Footer = () => (
                             </path>
                         </svg>
                     </a>
-                    <a href="mailto:churkinapps@gmail.com?subject=Question from CryptoPrices" title="email">
+                    <a href="mailto:churkindev@gmail.com?subject=Question from CryptoPrices" title="email">
                         <svg className={`${styles.svgFooter} ${styles.emailIcon}`} aria-hidden="true" data-prefix="fas" data-icon="envelope-square"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                             <path fill="currentColor"

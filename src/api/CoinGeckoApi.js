@@ -5,7 +5,7 @@ import {
     cryptosLoadFailedAction
 } from '../store/reducers/cryptosReducer';
 
-export const fetchCryptos = (currency, perPage, pageNumber) => {
+export const fetchCryptosAction = (currency, perPage, pageNumber) => {
 
     let formatter = new Intl.NumberFormat("ru", {
         style: 'currency',
