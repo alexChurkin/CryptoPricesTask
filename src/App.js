@@ -4,7 +4,7 @@ import TopTitle from './components/ui/TopTitle';
 import CurrencySwitch from './components/ui/CurrencySwitch';
 import CustomInput from './components/ui/CustomInput';
 import CryptosBook from './components/CryptosBook';
-//CryptoPage
+import CryptoDetails from './components/CryptoDetails';
 import Footer from './components/Footer';
 import { useDispatch } from 'react-redux';
 import { cryptosChangeCurrencyAction } from './store/reducers/cryptosReducer';
