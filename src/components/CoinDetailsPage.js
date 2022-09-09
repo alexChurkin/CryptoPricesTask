@@ -10,7 +10,6 @@ import { loadCoinDetailsAction } from "../asyncActions/CoinGeckoActions";
 const CoinDetailsPage = () => {
 
     const params = useParams();
-    console.log(params);
 
     const dispatch = useDispatch();
 

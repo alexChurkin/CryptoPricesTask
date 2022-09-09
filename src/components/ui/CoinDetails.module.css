@@ -10,3 +10,25 @@
 .textCenterVertical {
     line-height: calc(1.175rem + 1vw);
 }
+
+.chart {
+    width: 16rem;
+}
+
+@media (min-width: 320px) {
+    .chart {
+        width: 19rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .chart {
+        width: 25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .chart {
+        width: 35rem;
+    }
+}
