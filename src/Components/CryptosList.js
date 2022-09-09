@@ -1,4 +1,4 @@
-import ListItem from "./ui/ListItem";
+import ListItem from "./ui/simple/ListItem";
 
 const CryptosList = ({ items, currency }) => (
     <div className="list-group">

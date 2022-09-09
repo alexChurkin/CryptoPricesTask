@@ -1,4 +1,4 @@
-.sugBlock {
+.wholeBlock {
     display: flex;
     height: 76vh;
     flex-direction: column;
@@ -6,11 +6,11 @@
     align-items: center;
 }
 
-.sugText {
+.messageText {
     font-size: 2rem;
 }
 
-.retryButton {
+.buttonStyle {
     --bs-primary: var(--color-primary);
     --bs-btn-color: var(--color-primary);
     --bs-btn-border-color: var(--color-primary);

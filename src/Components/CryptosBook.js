@@ -1,7 +1,7 @@
 import CryptosList from "./CryptosList";
 import LoadSpinner from "./ui/LoadSpinner";
-import PageSwitch from "./ui/PageSwitch";
-import RetrySuggestion from "./ui/RetrySuggestion";
+import PageSwitch from "./ui/simple/PageSwitch";
+import MsgWithButton from "./ui/MsgWithButton";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cryptosChangePageAction } from "../store/reducers/cryptosReducer";
@@ -31,7 +31,11 @@ const CryptosBook = () => {
     if (isLoading)
         component = <LoadSpinner />;
     else if (isFailed)
-        component = <RetrySuggestion onClickRetry={() => { loadCryptos(); }} />;
+        component = <MsgWithButton
+            text="Не удалось загрузить валюты. Проверьте Ваше подключение к интернету и попробуйте снова."
+            buttonText="Попробовать снова"
+            onButtonClick={() => { loadCryptos(); }}
+        />;
     else if (cryptos == null)
         component = <></>;
     else

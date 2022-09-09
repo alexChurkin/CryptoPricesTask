@@ -1,17 +1,20 @@
 import './App.css';
 import { Container } from 'react-bootstrap';
-import TopTitle from './components/ui/TopTitle';
-import CurrencySwitch from './components/ui/CurrencySwitch';
-import CustomInput from './components/ui/CustomInput';
+import TopTitle from './components/ui/simple/TopTitle';
+import CurrencySwitch from './components/ui/simple/CurrencySwitch';
+import CustomInput from './components/ui/simple/CustomInput';
 import CryptosBook from './components/CryptosBook';
 import CryptoDetails from './components/CryptoDetails';
 import Footer from './components/Footer';
 import { useDispatch } from 'react-redux';
 import { cryptosChangeCurrencyAction } from './store/reducers/cryptosReducer';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import MsgWithButton from './components/ui/MsgWithButton';
 
 const App = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="App">
@@ -19,10 +22,19 @@ const App = () => {
         <TopTitle text="CryptoPrices" />
         <CurrencySwitch onChange={(value) => { dispatch(cryptosChangeCurrencyAction(value)); }} />
         <CustomInput placeholder="Поиск криптовалют..." />
-        <CryptosBook />
+
+        <Routes>
+          <Route path="/" element={<CryptosBook />} />
+          <Route path="*" element={<MsgWithButton
+            text="Страница не найдена."
+            buttonText="На главную"
+            onButtonClick={() => { navigate("/") }} />
+          } />
+        </Routes>
+
       </Container>
       <Footer />
-    </div>
+    </div >
   )
 };
 
