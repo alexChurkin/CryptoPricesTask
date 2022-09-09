@@ -1,14 +1,14 @@
 import './App.css';
 import { Container } from 'react-bootstrap';
-import TopTitle from './components/ui/simple/TopTitle';
-import CurrencySwitch from './components/ui/simple/CurrencySwitch';
-import CustomInput from './components/ui/simple/CustomInput';
-import CryptosBook from './components/CryptosBook';
-import CryptoDetails from './components/CoinDetails';
-import Footer from './components/ui/composite/Footer';
+import TopTitle from './components/ui/TopTitle';
+import CurrencySwitch from './components/ui/CurrencySwitch';
+import CustomInput from './components/ui/CustomInput';
+import CoinsPage from './components/CoinsPage';
+import CoinDetailsPage from './components/CoinDetailsPage';
+import Footer from './components/ui/Footer';
 import { useDispatch } from 'react-redux';
 import { cryptosChangeCurrencyAction } from './store/reducers/cryptosReducer';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
 
@@ -22,8 +22,8 @@ const App = () => {
         <CustomInput placeholder="Поиск криптовалют..." />
 
         <Routes>
-          <Route path="/" element={<CryptosBook />} />
-          <Route path="/:id" element={<CryptoDetails />} />
+          <Route path="/" element={<CoinsPage />} />
+          <Route path="/:id" element={<CoinDetailsPage />} />
         </Routes>
 
       </Container>

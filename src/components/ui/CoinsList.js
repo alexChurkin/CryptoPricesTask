@@ -1,6 +1,6 @@
-import ListItem from "../simple/ListItem";
+import ListItem from "./ListItem";
 
-const CryptosList = ({ items, currency }) => (
+const CoinsList = ({ items, currency }) => (
     <div className="list-group">
         {
             items.map(
@@ -22,4 +22,4 @@ const CryptosList = ({ items, currency }) => (
     </div>
 )
 
-export default CryptosList;
+export default CoinsList;

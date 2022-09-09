@@ -1,12 +1,13 @@
 import { Container } from "react-bootstrap";
-import LoadSpinner from "./ui/composite/LoadSpinner";
-import MsgWithButton from "./ui/composite/MsgWithButton";
+import LoadSpinner from "./ui/LoadSpinner";
+import MsgWithButton from "./ui/MsgWithButton";
+import CoinDetails from "./ui/CoinDetails";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCoinDetailsAction } from "../asyncActions/CoinGeckoActions";
 
-const CryptoDetails = () => {
+const CoinDetailsPage = () => {
 
     const params = useParams();
     console.log(params);
@@ -40,14 +41,14 @@ const CryptoDetails = () => {
         />;
     }
     else {
-        component = <div>{coin.name}</div>
+        component = <CoinDetails coin={coin} currency={currency} />
     }
 
     return (
-        <Container className="px-3 py-3">
+        <Container className="px-0 pt-0 pb-3">
             {component}
         </Container>
     );
 }
 
-export default CryptoDetails;
+export default CoinDetailsPage;

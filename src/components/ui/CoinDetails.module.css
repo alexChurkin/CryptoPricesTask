@@ -1,0 +1,8 @@
+.coinImage {
+    width: calc(1.175rem + 1vw);
+    height: calc(1.175rem + 1vw);
+}
+
+.textCenterVertical {
+    line-height: calc(1.175rem + 1vw);
+}
