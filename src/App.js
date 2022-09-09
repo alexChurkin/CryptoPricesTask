@@ -12,25 +12,23 @@ import PageSwitch from "./components/ui/PageSwitch";
 import {
   cryptosChangeCurrencyAction,
   cryptosChangePageAction
-}
-  from './store/reducers/cryptosReducer';
+} from './store/reducers/cryptosReducer';
 
 const App = () => {
-
+  
   const dispatch = useDispatch();
+  const isLoading = useSelector(state => state.cryptos.isLoading);
+  const isFailed = useSelector(state => state.cryptos.isFailed);
+  const cryptos = useSelector(state => state.cryptos.cryptos);
+  const currency = useSelector(state => state.cryptos.currency);
+  const page = useSelector(state => state.cryptos.page);
 
-  const isLoading = useSelector(state => state.isLoading);
-  const isFailed = useSelector(state => state.isFailed);
-  const cryptos = useSelector(state => state.cryptos);
-  const currency = useSelector(state => state.currency);
-  const page = useSelector(state => state.page);
-
-  function loadPage() {
+  function loadCryptos() {
     dispatch(fetchCryptos(currency, 20, page));
   }
 
   useEffect(() => {
-    loadPage();
+    loadCryptos();
     window.scrollTo(0, 0);
   }, [currency, page]);
 
@@ -43,7 +41,7 @@ const App = () => {
         <CryptosBooklet
           isLoading={isLoading}
           isFailed={isFailed}
-          onClickRetry={() => { loadPage(); }}
+          onClickRetry={() => { loadCryptos(); }}
           items={cryptos}
           currency={currency} />
         <PageSwitch onPageSelected={(page) => { dispatch(cryptosChangePageAction(page)); }} />

@@ -3,7 +3,9 @@ import { cryptosReducer } from './reducers/cryptosReducer';
 import thunk from 'redux-thunk';
 
 const store = configureStore({
-    reducer: cryptosReducer,
+    reducer: {
+        cryptos: cryptosReducer
+    },
     middleware: [thunk]
 })
 

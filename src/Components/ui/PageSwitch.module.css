@@ -4,4 +4,5 @@
     --bs-pagination-active-bg: var(--color-primary);
     --bs-pagination-active-border-color: var(--bs-pagination-border-color);
     --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-disabled-color: #b1b1b1;
 }
