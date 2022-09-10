@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './ListItem.module.css';
 
 const ListItem = ({ id, iconUrl, name, rank, price, change24h, volume24h, mktCap }) => {
@@ -6,7 +6,7 @@ const ListItem = ({ id, iconUrl, name, rank, price, change24h, volume24h, mktCap
     const navigate = useNavigate();
 
     return (
-        <a
+        <div
             className={`${styles.wholeItem} list-group-item list-group-item-action align-items-start`}
             data-toggle="list"
             onClick={() => { navigate(id); }}>
@@ -30,7 +30,7 @@ const ListItem = ({ id, iconUrl, name, rank, price, change24h, volume24h, mktCap
                 <span><span className={styles.textPrimary}>➤</span> Объём&nbsp;(24 ч.):&nbsp;&nbsp; <span className="text-nowrap">{volume24h}</span></span><br />
                 <span><span className={styles.textPrimary}>➤</span> Рыночная&nbsp;кап.: <span className="text-nowrap">{mktCap}</span></span>
             </div>
-        </a>
+        </div>
     )
 }
 
