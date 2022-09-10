@@ -32,7 +32,7 @@ const CoinsPage = () => {
         component = <LoadSpinner />;
     else if (isFailed)
         component = <MsgWithButton
-            text="Не удалось загрузить валюты. Проверьте Ваше подключение к интернету и попробуйте снова."
+            text={`Не удалось загрузить страницу.\nПроверьте подключение к интернету и попробуйте снова.`}
             buttonText="Попробовать снова"
             onButtonClick={() => { loadCryptos(); }}
         />;

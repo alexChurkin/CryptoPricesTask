@@ -8,18 +8,18 @@ import { useNavigate } from 'react-router-dom';
 
 import styles from './TopTitle.module.css';
 
-const TopTitle = ({ text }) => {
+const TopTitle = ({ text, ...props }) => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
     return (
-        <Navbar>
+        <Navbar {...props}>
             <NavbarBrand className="mx-auto">
-                <span className={styles.textStyle} onClick={() => {
+                <div className={styles.textStyle} onClick={() => {
                     dispatch(cryptosChangePageAction(1));
                     navigate("");
-                }}>{text}</span>
+                }}>{text}</div>
             </NavbarBrand>
         </Navbar>
     )

@@ -11,15 +11,7 @@ import {
     coinLoadFailedAction
 } from '../store/reducers/coinReducer';
 
-function currencyFormatter(currency) {
-    return new Intl.NumberFormat("ru", {
-        style: 'currency',
-        currency: currency.toUpperCase(),
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 20,
-        currencyDisplay: 'symbol'
-    });
-}
+import currencyFormatter from '../helpers/currencyFormatter';
 
 export const loadCryptosAction = (currency, perPage, pageNumber) => {
 

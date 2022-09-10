@@ -6,7 +6,9 @@ const MsgWithButton = ({ text, buttonText, onButtonClick, ...props }) => {
     return (
         <div className={styles.wholeBlock} {...props}>
             <div className={`display-5 mb-4 ${styles.messageText}`}>
-                {text}<br />
+                {text.split("\n").map((i, key) => {
+                    return <div key={key}>{i}</div>;
+                })}
             </div>
             <Button
                 variant="outline-primary"

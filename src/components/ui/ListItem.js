@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './ListItem.module.css';
 
 const ListItem = ({ id, iconUrl, name, rank, price, change24h, volume24h, mktCap }) => {
-    
+
     const navigate = useNavigate();
 
     return (

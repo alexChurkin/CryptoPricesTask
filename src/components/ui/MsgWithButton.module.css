@@ -7,7 +7,14 @@
 }
 
 .messageText {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+@media(min-width: 576px)
+{
+    .messageText {
+        font-size: 2rem;
+    }
 }
 
 .buttonStyle {

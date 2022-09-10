@@ -13,9 +13,6 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
 
 const CoinChart = ({ chartData }) => {
 
-    console.log("chartdata: ");
-    console.log(chartData);
-
     let data = {
         labels: [...arr],
         datasets: [

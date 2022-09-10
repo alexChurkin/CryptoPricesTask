@@ -1,4 +1,12 @@
 .textStyle {
     font-size: calc(2.5rem + 0.5vw);
     cursor: pointer;
+    
+    transition: transform .2s;
+}
+
+.textStyle:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
 }

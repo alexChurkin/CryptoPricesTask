@@ -34,7 +34,7 @@ const CoinDetailsPage = () => {
     }
     else if (isFailed) {
         component = <MsgWithButton
-            text="Не удалось загрузить страницу. Проверьте Ваше подключение к интернету и попробуйте снова."
+            text={`Не удалось загрузить страницу.\nПроверьте подключение к интернету и попробуйте снова.`}
             buttonText="Попробовать снова"
             onButtonClick={() => { loadDetails(); }}
         />;

@@ -32,3 +32,19 @@
         width: 35rem;
     }
 }
+
+.priceText {
+    font-size: 1.55rem;
+}
+
+.textPrimary {
+    color: var(--color-primary);
+}
+
+.textGreen {
+    color: var(--color-green);
+}
+
+.textRed {
+    color: var(--color-red);
+}
