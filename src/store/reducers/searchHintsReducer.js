@@ -22,7 +22,7 @@ export const searchHintsReducer = (state = defaultState, action) => {
         case SEARCH_FAILED:
             console.log('searchReducer: SEARCH_FAILED');
             console.log(action);
-            return { ...state, isLoading: false, isFailed: true, hints: [] };
+            return { ...state, isLoading: false, isFailed: true };
 
         default:
             console.log('searchReducer: default');

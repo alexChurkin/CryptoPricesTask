@@ -8,7 +8,7 @@ const store = configureStore({
     reducer: {
         cryptos: coinsReducer,
         coin: coinReducer,
-        searchHints: searchHintsReducer
+        search: searchHintsReducer
     },
     middleware: [thunk]
 })

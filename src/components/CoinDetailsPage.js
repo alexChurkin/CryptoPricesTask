@@ -25,7 +25,7 @@ const CoinDetailsPage = () => {
 
     useEffect(() => {
         loadDetails();
-    }, []);
+    }, [params]);
 
     let component;
 

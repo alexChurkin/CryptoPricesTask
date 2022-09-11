@@ -67,7 +67,7 @@ export const loadSearchHintsAction = (query) => {
         axios.get(
             `/search?query=${query}`)
             .then(response => response.data.coins)
-            .then(coins => coins.map((coin => coin.name)))
+            .then(coins => coins.map((coin => {return {id: coin.id, name: coin.name}})))
             .then(hints => dispatch(hintsLoadedAction(hints)))
             .catch(error => {
                 dispatch(hintsLoadFailedAction(error));
