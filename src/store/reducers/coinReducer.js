@@ -1,6 +1,10 @@
+export const CODE_OK = 0;
+export const FAIL_NETWORK = 1;
+export const FAIL_NO_COIN = 2;
+
 const defaultState = {
     isLoading: false,
-    isFailed: false,
+    status: CODE_OK,
     coin: {},
 }
 
@@ -12,7 +16,7 @@ export const coinReducer = (state = defaultState, action) => {
     switch (action.type) {
         case COIN_LOADSTART:
             console.log('coinReducer: COIN_LOADSTART');
-            return { ...state, isLoading: true, isFailed: false };
+            return { ...state, isLoading: true, status: CODE_OK };
 
         case COIN_LOADED:
             console.log('coinReducer: COIN_LOADED');
@@ -22,13 +26,13 @@ export const coinReducer = (state = defaultState, action) => {
         case COIN_LOADFAILED:
             console.log('coinReducer: COIN_LOADFAILED');
             console.log(action);
-            if (action.payload.code === "ERR_NETWORK") {
-                //console.log("ERR_NETWORK");
-            }
-            else if (action.payload.code === "ERR_BAD_REQUEST") {
-                //console.log("404");
-            }
-            return { ...state, isLoading: false, isFailed: true };
+
+            if (action.payload.code === "ERR_NETWORK")
+                return { ...state, isLoading: false, status: FAIL_NETWORK };
+            else if (action.payload.code === "ERR_BAD_REQUEST")
+                return { ...state, isLoading: false, status: FAIL_NO_COIN };
+
+            return { ...state, isLoading: false, status: FAIL_NETWORK };
 
         default:
             console.log('coinReducer: default');

@@ -3,20 +3,22 @@ import LoadSpinner from "./ui/LoadSpinner";
 import MsgWithButton from "./ui/MsgWithButton";
 import CoinDetails from "./ui/CoinDetails";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loadCoinDetailsAction } from "../asyncActions/CoinGeckoActions";
+import { FAIL_NETWORK, FAIL_NO_COIN } from "../store/reducers/coinReducer";
 
 const CoinDetailsPage = () => {
 
     const params = useParams();
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const currency = useSelector(state => state.cryptos.currency);
 
     const isLoading = useSelector(state => state.coin.isLoading);
-    const isFailed = useSelector(state => state.coin.isFailed);
+    const status = useSelector(state => state.coin.status);
     const coin = useSelector(state => state.coin.coin);
 
     function loadDetails() {
@@ -32,11 +34,18 @@ const CoinDetailsPage = () => {
     if (isLoading) {
         component = <LoadSpinner />;
     }
-    else if (isFailed) {
+    else if (status === FAIL_NETWORK) {
         component = <MsgWithButton
-            text={`Не удалось загрузить страницу.\nПроверьте подключение к интернету и попробуйте снова.`}
+            text={`Не удалось загрузить данные.\nПроверьте подключение к интернету и попробуйте снова.`}
             buttonText="Попробовать снова"
             onButtonClick={() => { loadDetails(); }}
+        />;
+    }
+    else if (status === FAIL_NO_COIN) {
+        component = <MsgWithButton
+            text={`Не удалось найти монету по данному адресу (URL).`}
+            buttonText="На главную"
+            onButtonClick={() => { navigate("/"); }}
         />;
     }
     else {
