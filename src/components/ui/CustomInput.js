@@ -1,10 +1,24 @@
-import styles from './CustomInput.module.css';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import { useState } from 'react';
 
 const CustomInput = (props) => {
+
+    const [selected, setSelected] = useState([]);
+
     return (
-        <input
-            className={`form-control ${styles.customInput} mt-3 mb-3`}
-            {...props}
+
+        <Typeahead
+            className={`customInput mt-3 mb-3`}
+            id="searchCoins"
+            options={[
+                'John',
+                'Miles',
+                'Charles',
+                'Herbie',
+            ]}
+            placeholder="Поиск криптовалют..."
+            selected={selected}
+            onChange={setSelected}
         />
     )
 }
