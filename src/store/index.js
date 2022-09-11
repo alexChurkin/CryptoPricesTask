@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { cryptosReducer } from './reducers/cryptosReducer';
+import { coinsReducer } from './reducers/coinsReducer';
 import { coinReducer } from './reducers/coinReducer';
+import { searchHintsReducer } from './reducers/searchHintsReducer';
 import thunk from 'redux-thunk';
 
 const store = configureStore({
     reducer: {
-        cryptos: cryptosReducer,
-        coin: coinReducer
+        cryptos: coinsReducer,
+        coin: coinReducer,
+        searchHints: searchHintsReducer
     },
     middleware: [thunk]
 })

@@ -3,7 +3,7 @@ import {
     NavbarBrand
 } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { cryptosChangePageAction } from '../../store/reducers/cryptosReducer';
+import { cryptosChangePageAction } from '../../store/reducers/coinsReducer';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './TopTitle.module.css';

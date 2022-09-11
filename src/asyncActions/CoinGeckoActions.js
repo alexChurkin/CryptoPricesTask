@@ -3,13 +3,19 @@ import {
     cryptosLoadStartAction,
     cryptosLoadedAction,
     cryptosLoadFailedAction
-} from '../store/reducers/cryptosReducer';
+} from '../store/reducers/coinsReducer';
 
 import {
     coinLoadStartAction,
     coinLoadedAction,
     coinLoadFailedAction
 } from '../store/reducers/coinReducer';
+
+import {
+    hintsLoadedAction,
+    hintsLoadFailedAction,
+    hintsLoadStartAction
+} from '../store/reducers/searchHintsReducer';
 
 import currencyFormatter from '../helpers/currencyFormatter';
 
@@ -49,6 +55,22 @@ export const loadCoinDetailsAction = (id) => {
             .then(data => dispatch(coinLoadedAction(data)))
             .catch(error => {
                 dispatch(coinLoadFailedAction(error));
+            });
+    }
+}
+
+export const loadSearchHintsAction = (query) => {
+
+    return function (dispatch) {
+        dispatch(hintsLoadStartAction());
+
+        axios.get(
+            `/search?query=${query}`)
+            .then(response => response.data.coins)
+            .then(coins => coins.map((coin => coin.name)))
+            .then(hints => dispatch(hintsLoadedAction(hints)))
+            .catch(error => {
+                dispatch(hintsLoadFailedAction(error));
             });
     }
 }

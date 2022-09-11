@@ -12,34 +12,34 @@ const CRYPTOS_LOADFAILED = "CRYPTOS_LOADFAILED";
 const CRYPTOS_CHANGE_CURRENCY = "CRYPTOS_CHANGE_CURRENCY";
 const CRYPTOS_CHANGE_PAGE = "CRYPTOS_CHANGE_PAGE";
 
-export const cryptosReducer = (state = defaultState, action) => {
+export const coinsReducer = (state = defaultState, action) => {
     switch (action.type) {
         case CRYPTOS_LOADSTART:
-            console.log('cryptosPageReducer: CRYPTOS_LOADSTART');
+            console.log('coinsReducer: CRYPTOS_LOADSTART');
             return { ...state, isLoading: true, isFailed: false };
 
         case CRYPTOS_LOADED:
-            console.log('cryptosPageReducer: CRYPTOS_LOADED');
+            console.log('coinsReducer: CRYPTOS_LOADED');
             console.log(action);
             return { ...state, isLoading: false, cryptos: action.payload };
 
         case CRYPTOS_LOADFAILED:
-            console.log('cryptosPageReducer: CRYPTOS_LOADFAILED');
+            console.log('coinsReducer: CRYPTOS_LOADFAILED');
             console.log(action);
             return { ...state, isLoading: false, isFailed: true };
 
         case CRYPTOS_CHANGE_CURRENCY:
-            console.log('cryptosPageReducer: CRYPTOS_CHANGE_CURRENCY');
+            console.log('coinsReducer: CRYPTOS_CHANGE_CURRENCY');
             console.log(action);
             return { ...state, currency: action.payload };
 
         case CRYPTOS_CHANGE_PAGE:
-            console.log('cryptosPageReducer: CRYPTOS_CHANGE_PAGE');
+            console.log('coinsReducer: CRYPTOS_CHANGE_PAGE');
             console.log(action);
             return { ...state, page: action.payload };
 
         default:
-            console.log('cryptosPageReducer: default');
+            console.log('coinsReducer: default');
             return state;
     }
 }

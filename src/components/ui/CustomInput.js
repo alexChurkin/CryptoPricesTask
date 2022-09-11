@@ -1,25 +1,23 @@
-import { Typeahead } from 'react-bootstrap-typeahead';
+import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import { useState } from 'react';
 
-const CustomInput = (props) => {
+const CustomInput = ({isLoading, onSearch, hints,...props}) => {
 
     const [selected, setSelected] = useState([]);
 
-    return (
+    console.log("redraw!");
+    console.log("hints:");
+    console.log(hints);
 
-        <Typeahead
+    return (
+        <AsyncTypeahead
+            id="asyncSearchCoins"
             className={`customInput mt-3 mb-3`}
-            id="searchCoins"
-            options={[
-                'John',
-                'Miles',
-                'Charles',
-                'Herbie',
-            ]}
-            placeholder="Поиск криптовалют..."
-            emptyLabel="Ничего не найдено."
-            selected={selected}
-            onChange={setSelected}
+            isLoading={isLoading}
+            onSearch={onSearch}
+            options={hints}
+            useCache
+            {...props}
         />
     )
 }

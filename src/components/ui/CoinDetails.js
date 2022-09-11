@@ -12,7 +12,7 @@ const CoinDetails = ({ currency, coin }) => {
                 <div className={`me-3`}>
                     <span className={`display-6 ${styles.textCenterVertical}`}>{coin?.name}</span>
                 </div>
-                <img className={`my-auto`} src={coin?.image?.small} alt={coin?.name} />
+                <img className={`my-auto ${styles.coinImage}`} src={coin?.image?.large} alt={coin?.name} />
             </div>
 
             <div className="d-flex flex-row justify-content-start mb-3">
@@ -38,7 +38,7 @@ const CoinDetails = ({ currency, coin }) => {
                 </span>
                 
                 <span className="text-start mb-4"><span className={styles.textPrimary}>➤ </span>
-                    Изм. (7 д.):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
+                    Изм. (24 ч.):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
                         {coin?.market_data?.price_change_percentage_24h_in_currency[currency]?.toFixed(2)}%
                     </span>
                 </span>
@@ -57,7 +57,7 @@ const CoinDetails = ({ currency, coin }) => {
 
             <div className="d-flex flex-column align-items-center justify-content-center mt-3">
                 <div className={styles.chart}>
-                    <span>Динамика за 7 дней:</span>
+                    <div className="mb-1">Динамика за 7 дней (в $):</div>
                     <CoinChart chartData={coin?.market_data?.sparkline_7d?.price} />
                 </div >
             </div>

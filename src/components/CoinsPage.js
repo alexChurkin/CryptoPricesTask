@@ -4,7 +4,7 @@ import PageSwitch from "./ui/PageSwitch";
 import MsgWithButton from "./ui/MsgWithButton";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { cryptosChangePageAction } from "../store/reducers/cryptosReducer";
+import { cryptosChangePageAction } from "../store/reducers/coinsReducer";
 import { loadCryptosAction } from '../asyncActions/CoinGeckoActions';
 
 const CoinsPage = () => {
