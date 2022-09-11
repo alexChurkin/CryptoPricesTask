@@ -2,7 +2,7 @@ import './App.css';
 import { Container } from 'react-bootstrap';
 import TopTitle from './components/ui/TopTitle';
 import CurrencySwitch from './components/ui/CurrencySwitch';
-import CustomInput from './components/ui/CustomInput';
+import CustomSearch from './components/ui/CustomSearch';
 import CoinsPage from './components/CoinsPage';
 import CoinDetailsPage from './components/CoinDetailsPage';
 import Footer from './components/ui/Footer';
@@ -20,7 +20,7 @@ const App = () => {
 
         <TopTitle text="CryptoPrices" />
         <CurrencySwitch onChange={(value) => { dispatch(cryptosChangeCurrencyAction(value)); }} />
-        <CustomInput />
+        <CustomSearch />
 
         <Routes>
           <Route path="/" element={<CoinsPage />} />

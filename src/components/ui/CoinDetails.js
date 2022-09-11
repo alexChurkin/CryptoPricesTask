@@ -57,7 +57,7 @@ const CoinDetails = ({ currency, coin }) => {
 
             <div className="d-flex flex-column align-items-center justify-content-center mt-3">
                 <div className={styles.chart}>
-                    <div className="mb-1">Динамика за 7 дней (в $):</div>
+                    <div className="mb-1">Динамика за 7 дней ($):</div>
                     <CoinChart chartData={coin?.market_data?.sparkline_7d?.price} />
                 </div >
             </div>

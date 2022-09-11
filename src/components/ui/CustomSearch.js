@@ -1,21 +1,25 @@
+import { useEffect, useState } from 'react';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadSearchHintsAction } from '../../asyncActions/CoinGeckoActions';
 import { useNavigate } from 'react-router-dom';
+import { loadSearchHintsAction } from '../../asyncActions/CoinGeckoActions';
 
-const CustomInput = (props) => {
+const CustomSearch = (props) => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const hints = useSelector(state => state.search.hints);
+    //const isLoading = useSelector(state => state.search.isLoading);
 
     return (
         <AsyncTypeahead
             id="asyncSearchCoins"
             className={`customInput mt-3 mb-3`}
             placeholder="Поиск криптовалют..."
-            emptyLabel="Загрузка..."
+            promptText=""
+            emptyLabel="Ничего не найдено."
+            searchText=""
             labelKey="name"
             isLoading={false}
             onSearch={(query) => {
@@ -27,8 +31,9 @@ const CustomInput = (props) => {
             onChange={(selected) => {
                 console.log("search: element selected:");
                 console.log(selected);
-                if(selected[0] !== undefined)
+                if(selected != null && selected[0] != null) {
                     navigate(`/${selected[0].id}`);
+                }
             }}
             options={hints}
             useCache
@@ -37,4 +42,4 @@ const CustomInput = (props) => {
     )
 }
 
-export default CustomInput;
+export default CustomSearch;
