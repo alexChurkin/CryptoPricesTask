@@ -17,6 +17,7 @@ const CustomInput = (props) => {
                 'Herbie',
             ]}
             placeholder="Поиск криптовалют..."
+            emptyLabel="Ничего не найдено."
             selected={selected}
             onChange={setSelected}
         />
