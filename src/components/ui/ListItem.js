@@ -12,7 +12,7 @@ const ListItem = ({ id, iconUrl, name, rank, price, change24h, volume24h, mktCap
             onClick={() => { navigate(id); }}>
             <div className='d-flex flex-row pb-2'>
                 <img className={`${styles.icon} my-auto`} src={iconUrl} alt={name} />
-                <div className={`d-flex flex-column ${styles.priceAndChange24}`}>
+                <div className={`d-flex flex-column flex-grow-1`}>
                     <h5 className="text-start my-auto">{name} {(rank != null) ? `(#${rank})` : ""} </h5>
                     <div className="d-flex flex-row justify-content-between">
                         <span>{price}</span>
