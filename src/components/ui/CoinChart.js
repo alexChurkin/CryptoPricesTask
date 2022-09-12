@@ -7,11 +7,14 @@ import {
     LineElement,
     Legend,
 } from "chart.js";
+import currencyFormatter from '../../helpers/currencyFormatter';
 
 let arr = Array.apply(null, Array(168)).map(function () { return ''; });
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
 
 const CoinChart = ({ chartData }) => {
+
+    const formatter = currencyFormatter("usd");
 
     let data = {
         labels: [...arr],
@@ -48,9 +51,8 @@ const CoinChart = ({ chartData }) => {
         scales: {
             y: {
                 ticks: {
-                    // Include a dollar sign in the ticks
                     callback: function (value, index, ticks) {
-                        return `${value} $`;
+                        return formatter.format(value);
                     }
                 }
             }

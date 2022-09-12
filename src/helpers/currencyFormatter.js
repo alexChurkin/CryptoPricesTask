@@ -3,7 +3,7 @@ function currencyFormatter(currency) {
         style: 'currency',
         currency: currency.toUpperCase(),
         minimumFractionDigits: 0,
-        maximumFractionDigits: 20,
+        maximumFractionDigits: 10,
         currencyDisplay: 'symbol'
     });
 }
