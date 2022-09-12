@@ -21,9 +21,9 @@ const CoinDetails = ({ currency, coin }) => {
                 </div>
             </div>
 
-            <div className="d-flex flex-wrap justify-content-start align-items-start">
+            <div className="d-flex flex-wrap justify-content-between align-items-start">
 
-                <div className="d-flex flex-column justify-content-start align-items-start pe-5">
+                <div className={`d-flex flex-column justify-content-start align-items-start pb-4 pe-4`}>
                     Основные данные:
                     <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
                         Объём&nbsp;(24 ч.):&nbsp;&nbsp; <span className="text-nowrap">
@@ -35,27 +35,40 @@ const CoinDetails = ({ currency, coin }) => {
                             {formatter.format(coin?.market_data?.market_cap[currency])}
                         </span>
                     </span>
-                    <span className="text-start mb-2"><span className={styles.textPrimary}>➤ </span>
+                    <span className="text-start"><span className={styles.textPrimary}>➤ </span>
                         Дн. диапазон:&nbsp;&nbsp; <span className="text-nowrap">
                             {formatter.format(coin?.market_data?.low_24h[currency])} – {formatter.format(coin?.market_data?.high_24h[currency])}</span>
                     </span>
+                </div>
 
-                    <span className="text-start mb-4"><span className={styles.textPrimary}>➤ </span>
-                        Изм. (24 ч.):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
+                <div className={`d-flex flex-column justify-content-start align-items-start pb-4 pe-4`}>
+                    Изменение:
+                    <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
+                        Изм. (1 ч.):&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_1h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
+                            {coin?.market_data?.price_change_percentage_1h_in_currency[currency]?.toFixed(2)}%
+                        </span>
+                    </span>
+                    <span className="text-start mb-2"><span className={styles.textPrimary}>➤ </span>
+                        Изм. (24 ч.):&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
                             {coin?.market_data?.price_change_percentage_24h_in_currency[currency]?.toFixed(2)}%
+                        </span>
+                    </span>
+                    <span className="text-start"><span className={styles.textPrimary}>➤ </span>
+                        Изм. (7 д.):&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_7d_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
+                            {coin?.market_data?.price_change_percentage_7d_in_currency[currency]?.toFixed(2)}%
                         </span>
                     </span>
                 </div>
 
-                <div className="d-flex flex-column justify-content-start align-items-start">
+                <div className={`d-flex flex-column justify-content-start align-items-start pe-2`}>
                     Другое:
                     <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Ист. максимум:&nbsp;<span className="text-nowrap">
+                        Ист. максимум:&nbsp;&nbsp;&nbsp;<span className="text-nowrap">
                             {formatter.format(coin?.market_data?.ath[currency])}
                         </span>
                     </span>
                     <span className="text-start mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Ист. минимум:&nbsp; <span className="text-nowrap">
+                        Ист. минимум:&nbsp;&nbsp;&nbsp; <span className="text-nowrap">
                             {formatter.format(coin?.market_data?.atl[currency])}
                         </span>
                     </span>
