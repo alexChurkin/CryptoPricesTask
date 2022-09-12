@@ -30,7 +30,9 @@ const App = () => {
       />
 
       <CurrencySwitch
+        defaultValue={localStorage.getItem("currency") || "rub"}
         onChange={(value) => {
+          localStorage.setItem("currency", value);
           dispatch(cryptosChangeCurrencyAction(value));
         }}
       />

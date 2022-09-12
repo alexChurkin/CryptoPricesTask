@@ -3,7 +3,7 @@ const defaultState = {
     isFailed: false,
     page: 1,
     cryptos: [],
-    currency: "rub"
+    currency: localStorage.getItem("currency") || "rub"
 }
 
 const CRYPTOS_LOADSTART = "CRYPTOS_LOADSTART";

@@ -5,12 +5,13 @@ import {
 
 import styles from './CurrencySwitch.module.css';
 
-const CurrencySwitch = (props) => (
+const CurrencySwitch = ({defaultValue, onChange, ...props}) => (
     <ToggleButtonGroup
         type="radio"
         exclusive="true"
         name="currency-switch"
-        defaultValue='rub'
+        defaultValue={defaultValue}
+        onChange={onChange}
         {...props}>
 
         <ToggleButton id="btn-rub" variant="outline-primary" size="lg"
