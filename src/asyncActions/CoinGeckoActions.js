@@ -19,6 +19,14 @@ import {
 
 import currencyFormatter from '../helpers/currencyFormatter';
 
+const noCache = {
+    headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+    }
+};
+
 export const loadCryptosAction = (currency, perPage, pageNumber) => {
 
     let formatter = currencyFormatter(currency);
@@ -27,7 +35,8 @@ export const loadCryptosAction = (currency, perPage, pageNumber) => {
         dispatch(cryptosLoadStartAction());
 
         axios.get(
-            `/coins/markets?per_page=${perPage}&order=market_cap_desc&page=${pageNumber}&vs_currency=${currency}`)
+            `/coins/markets?per_page=${perPage}&order=market_cap_desc&page=${pageNumber}&vs_currency=${currency}`,
+            noCache)
             .then(response => response.data)
             .then(data => {
                 data.forEach(element => {
@@ -50,7 +59,8 @@ export const loadCoinDetailsAction = (id) => {
         dispatch(coinLoadStartAction());
 
         axios.get(
-            `/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`)
+            `/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=true`,
+            noCache)
             .then(response => response.data)
             .then(data => dispatch(coinLoadedAction(data)))
             .catch(error => {
@@ -67,7 +77,7 @@ export const loadSearchHintsAction = (query) => {
         axios.get(
             `/search?query=${query}`)
             .then(response => response.data.coins)
-            .then(coins => coins.map((coin => {return {id: coin.id, name: coin.name}})))
+            .then(coins => coins.map((coin => { return { id: coin.id, name: coin.name } })))
             .then(hints => dispatch(hintsLoadedAction(hints)))
             .catch(error => {
                 dispatch(hintsLoadFailedAction(error));

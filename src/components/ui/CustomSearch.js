@@ -10,19 +10,22 @@ const CustomSearch = (props) => {
     const navigate = useNavigate();
 
     const hints = useSelector(state => state.search.hints);
-    //const isLoading = useSelector(state => state.search.isLoading);
+    const isLoading = useSelector(state => state.search.isLoading);
+
+    let queryText = '';
 
     return (
         <AsyncTypeahead
             id="asyncSearchCoins"
             className={`customInput mt-3 mb-3`}
             placeholder="Поиск криптовалют..."
-            promptText=""
-            emptyLabel="Ничего не найдено."
-            searchText=""
+            promptText="Загрузка..."
+            emptyLabel={isLoading ? "Загрузка..." : "Ничего не найдено."}
+            searchText="Загрузка..."
             labelKey="name"
             isLoading={false}
             onSearch={(query) => {
+                queryText = query;
                 console.log("search text: " + query);
 
                 if (query.trim().length >= 2)
