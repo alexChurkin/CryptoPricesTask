@@ -7,11 +7,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.headers = {
-  'Cache-Control': 'no-cache',
-  'Pragma': 'no-cache',
-  'Expires': '0',
-};
 axios.defaults.baseURL = 'https://api.coingecko.com/api/v3/';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

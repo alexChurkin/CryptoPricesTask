@@ -19,7 +19,7 @@ const ListItem = ({ id, iconUrl, name, rank, price, change24h, volume24h, mktCap
                         {
                             (change24h !== null) ?
                                 <span className={(change24h > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}>{change24h.toFixed(2)}%</span> :
-                                <></>
+                                <>0.0%</>
                         }
 
                     </div>

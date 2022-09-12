@@ -1,23 +1,24 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { loadSearchHintsAction } from '../../asyncActions/CoinGeckoActions';
+import { loadSearchHintsAction } from '../asyncActions/CoinGeckoActions';
 
 const CustomSearch = (props) => {
 
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const ref = React.createRef();
 
+    const dispatch = useDispatch();
     const hints = useSelector(state => state.search.hints);
     const isLoading = useSelector(state => state.search.isLoading);
-
-    let queryText = '';
+    
+    const navigate = useNavigate();
 
     return (
         <AsyncTypeahead
             id="asyncSearchCoins"
             className={`customInput mt-3 mb-3`}
+            ref={ref}
             placeholder="Поиск криптовалют..."
             promptText="Загрузка..."
             emptyLabel={isLoading ? "Загрузка..." : "Ничего не найдено."}
@@ -25,9 +26,8 @@ const CustomSearch = (props) => {
             labelKey="name"
             isLoading={false}
             onSearch={(query) => {
-                queryText = query;
                 console.log("search text: " + query);
-
+                
                 if (query.trim().length >= 2)
                     dispatch(loadSearchHintsAction(query));
             }}
@@ -36,6 +36,7 @@ const CustomSearch = (props) => {
                 console.log(selected);
                 if(selected != null && selected[0] != null) {
                     navigate(`/${selected[0].id}`);
+                    ref.current.clear();
                 }
             }}
             options={hints}

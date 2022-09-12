@@ -6,7 +6,7 @@ import {
 import styles from './Footer.module.css';
 
 const Footer = () => (
-    <div className={styles.footer}>
+    <div className="d-block bg-light">
         <Container className={`${styles.footerInside} py-3`}>
             <Row>
                 <Col xs={7} className={`${styles.textFooter} px-0 text-muted`}>

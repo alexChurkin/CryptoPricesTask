@@ -1,20 +1,14 @@
-.footer {
-    background-color: #f8f9fa;
-    display:block;
-}
-
 .footerInside {
-    width: 60vw;
+    width: 95vw;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
     .footerInside {
-        width: 95vw;
+        width: 60vw;
     }
 }
 
 .textFooter {
-    font-size: 1.1rem;
     padding-right: 0;
     text-align: left;
 }
@@ -42,7 +36,6 @@
 @media (max-width: 475px) {
     .textFooter {
         text-align: start;
-        font-size: 1rem;
     }
     .socialButtons {
         text-align: end;

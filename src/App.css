@@ -14,26 +14,28 @@
 
   --color-green: #15d163;
   --color-red: #ff4949;
-  --bs-dropdown-link-active-color: rgba(0, 0, 0, 1);
+
+  font-size: 1rem;
+}
+
+@media (min-width:475px) {
+  #root {
+    font-size: 1.1rem;
+  }
 }
 
 .mainContainer {
   min-height: 500px;
-  width: 60vw;
-  font-size: 1.1rem;
+  width: 95vw;
   padding-left: 0;
   padding-right: 0;
 }
 
-@media (max-width:475px) {
-  .mainContainer {
-    font-size: 1rem;
-  }
-}
 
-@media (max-width: 992px) {
+
+@media (min-width: 992px) {
   .mainContainer {
-    width: 95vw;
+    width: 60vw;
   }
 }
 
