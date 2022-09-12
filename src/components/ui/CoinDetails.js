@@ -45,12 +45,12 @@ const CoinDetails = ({ currency, coin }) => {
                     Динамика:
                     <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
                         Изм. (1 ч.):&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_1h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
-                            {coin?.market_data?.price_change_percentage_1h_in_currency[currency]?.toFixed(2)?? "0.0"}%
+                            {coin?.market_data?.price_change_percentage_1h_in_currency[currency]?.toFixed(2) ?? "0.0"}%
                         </span>
                     </span>
                     <span className="text-start mb-2"><span className={styles.textPrimary}>➤ </span>
                         Изм. (24 ч.):&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
-                            {coin?.market_data?.price_change_percentage_24h_in_currency[currency]?.toFixed(2)?? "0.0"}%
+                            {coin?.market_data?.price_change_percentage_24h_in_currency[currency]?.toFixed(2) ?? "0.0"}%
                         </span>
                     </span>
                     <span className="text-start"><span className={styles.textPrimary}>➤ </span>
@@ -73,9 +73,6 @@ const CoinDetails = ({ currency, coin }) => {
                         </span>
                     </span>
                 </div>
-
-
-
             </div>
 
             <div className="d-flex flex-column align-items-center justify-content-center mt-3">

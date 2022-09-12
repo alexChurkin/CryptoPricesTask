@@ -5,32 +5,50 @@ import CurrencySwitch from './components/ui/CurrencySwitch';
 import CustomSearch from './components/CustomSearch';
 import CoinsPage from './components/CoinsPage';
 import CoinDetailsPage from './components/CoinDetailsPage';
-import Footer from './components/Footer';
+import Footer from './components/ui/Footer';
 import { useDispatch } from 'react-redux';
-import { cryptosChangeCurrencyAction } from './store/reducers/coinsReducer';
-import { Routes, Route } from 'react-router-dom';
+import {
+  cryptosChangeCurrencyAction,
+  cryptosChangePageAction
+} from './store/reducers/coinsReducer';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 const App = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="App">
+
+      <TopTitle
+        text="CryptoPrices"
+        onClick={() => {
+          dispatch(cryptosChangePageAction(1));
+          navigate("/");
+        }}
+      />
+
+      <CurrencySwitch
+        onChange={(value) => {
+          dispatch(cryptosChangeCurrencyAction(value));
+        }}
+      />
+
       <Container className="mainContainer">
-
-        <TopTitle text="CryptoPrices" />
-        <CurrencySwitch onChange={(value) => { dispatch(cryptosChangeCurrencyAction(value)); }} />
         <CustomSearch />
-
         <Routes>
           <Route path="/" element={<CoinsPage />} />
           <Route path="/:id" exact element={<CoinDetailsPage />} />
         </Routes>
-
       </Container>
 
-      <Footer />
-    </div >
+      <Footer
+        text="© Alex Churkin 2022"
+        githubLink="https://github.com/alexChurkin"
+        email="churkindev@gmail.com"
+        mailSubject="Вопрос с CryptoPrices" />
+    </div>
   )
 };
 
