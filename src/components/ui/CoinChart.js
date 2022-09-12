@@ -46,7 +46,7 @@ const CoinChart = ({ chartData }) => {
         plugins: {
             legend: {
                 display: false
-            },
+            }
         },
         scales: {
             y: {

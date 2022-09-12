@@ -1,0 +1,11 @@
+.clrPrimary {
+    color: var(--color-primary);
+}
+
+.green {
+    color: var(--color-green);
+}
+
+.red {
+    color: var(--color-red);
+}

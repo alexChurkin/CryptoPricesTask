@@ -1,6 +1,7 @@
 import CoinChart from './CoinChart';
 import styles from './CoinDetails.module.css';
 import currencyFormatter from '../../helpers/currencyFormatter';
+import Characteristic from './Characteristic';
 
 const CoinDetails = ({ currency, coin }) => {
 
@@ -9,7 +10,7 @@ const CoinDetails = ({ currency, coin }) => {
     return (
         <>
             <div className={`d-flex flex-row align-items-center ${styles.h50px} mb-2`}>
-                <div className={`me-3`}>
+                <div className="me-3">
                     <span className={`display-6 ${styles.textCenterVertical}`}>{coin?.name}</span>
                 </div>
                 <img className={`my-auto ${styles.coinImage}`} src={coin?.image?.large} alt={coin?.name} />
@@ -24,58 +25,56 @@ const CoinDetails = ({ currency, coin }) => {
             <div className="d-flex flex-wrap justify-content-between align-items-start">
 
                 <div className={`d-flex flex-column justify-content-start align-items-start pb-4 pe-4`}>
-                    Основные данные:
-                    <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Объём&nbsp;(24 ч.):&nbsp;&nbsp; <span className="text-nowrap">
-                            {formatter.format(coin?.market_data?.total_volume[currency])}</span>
-                    </span>
-                    <span className="text-start mb-2">
-                        <span className={styles.textPrimary}>➤ </span>
-                        Рыночная&nbsp;кап.: <span className="text-nowrap">
-                            {formatter.format(coin?.market_data?.market_cap[currency])}
-                        </span>
-                    </span>
-                    <span className="text-start"><span className={styles.textPrimary}>➤ </span>
-                        Дн. диапазон:&nbsp;&nbsp; <span className="text-nowrap">
-                            {formatter.format(coin?.market_data?.low_24h[currency] ?? 0.0)} – {formatter.format(coin?.market_data?.high_24h[currency] ?? 0.0)}</span>
-                    </span>
+                    <span className="mb-2">Основные данные:</span>
+                    <Characteristic
+                        name="Объём (24 ч.)"
+                        spacesCount="3"
+                        value={formatter.format(coin?.market_data?.total_volume[currency])} />
+                    <Characteristic
+                        name="Рыночная кап."
+                        spacesCount="1"
+                        value={formatter.format(coin?.market_data?.market_cap[currency])} />
+                    <Characteristic
+                        name="Дн. диапазон"
+                        spacesCount="3"
+                        value={`${formatter.format(coin?.market_data?.low_24h[currency] ?? 0.0)} – ${formatter.format(coin?.market_data?.high_24h[currency] ?? 0.0)}`} />
                 </div>
 
                 <div className={`d-flex flex-column justify-content-start align-items-start pb-4 pe-4`}>
-                    Динамика:
-                    <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Изм. (1 ч.):&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_1h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
-                            {coin?.market_data?.price_change_percentage_1h_in_currency[currency]?.toFixed(2) ?? "0.0"}%
-                        </span>
-                    </span>
-                    <span className="text-start mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Изм. (24 ч.):&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
-                            {coin?.market_data?.price_change_percentage_24h_in_currency[currency]?.toFixed(2) ?? "0.0"}%
-                        </span>
-                    </span>
-                    <span className="text-start"><span className={styles.textPrimary}>➤ </span>
-                        Изм. (7 д.):&nbsp;&nbsp;&nbsp;&nbsp; <span className={`text-nowrap ${(coin?.market_data?.price_change_percentage_7d_in_currency[currency] > 0.0) ? `${styles.textGreen}` : `${styles.textRed}`}`}>
-                            {coin?.market_data?.price_change_percentage_7d_in_currency[currency]?.toFixed(2) ?? "0.0"}%
-                        </span>
-                    </span>
+                    <span className="mb-2">Динамика:</span>
+                    <Characteristic
+                        name="Изм. (1 ч.)"
+                        spacesCount="5"
+                        value={`${coin?.market_data?.price_change_percentage_1h_in_currency[currency]?.toFixed(2) ?? "0.0"}%`}
+                        isGood={coin?.market_data?.price_change_percentage_1h_in_currency[currency] > 0.0} />
+
+                    <Characteristic
+                        name="Изм. (24 ч.)"
+                        spacesCount="3"
+                        value={`${coin?.market_data?.price_change_percentage_24h_in_currency[currency]?.toFixed(2) ?? "0.0"}%`}
+                        isGood={coin?.market_data?.price_change_percentage_24h_in_currency[currency] > 0.0} />
+
+                    <Characteristic
+                        name="Изм. (7 д.)"
+                        spacesCount="5"
+                        value={`${coin?.market_data?.price_change_percentage_7d_in_currency[currency]?.toFixed(2) ?? "0.0"}%`}
+                        isGood={coin?.market_data?.price_change_percentage_7d_in_currency[currency] > 0.0} />
                 </div>
 
                 <div className={`d-flex flex-column justify-content-start align-items-start pe-2`}>
-                    Другое:
-                    <span className="text-start mt-2 mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Ист. максимум:&nbsp;&nbsp;&nbsp;<span className="text-nowrap">
-                            {formatter.format(coin?.market_data?.ath[currency])}
-                        </span>
-                    </span>
-                    <span className="text-start mb-2"><span className={styles.textPrimary}>➤ </span>
-                        Ист. минимум:&nbsp;&nbsp;&nbsp; <span className="text-nowrap">
-                            {formatter.format(coin?.market_data?.atl[currency])}
-                        </span>
-                    </span>
+                    <span className="mb-2">Другое:</span>
+                    <Characteristic
+                        name="Ист. максимум"
+                        spacesCount="3"
+                        value={formatter.format(coin?.market_data?.ath[currency])} />
+                    <Characteristic
+                        name="Ист. минимум"
+                        spacesCount="4"
+                        value={formatter.format(coin?.market_data?.atl[currency])} />
                 </div>
             </div>
 
-            <div className="d-flex flex-column align-items-center justify-content-center mt-3">
+            <div className="d-flex flex-column align-items-center justify-content-center mt-1">
                 <div className={styles.chart}>
                     <div className="mb-1">Динамика за 7 дней ($):</div>
                     <CoinChart chartData={coin?.market_data?.sparkline_7d?.price} />
